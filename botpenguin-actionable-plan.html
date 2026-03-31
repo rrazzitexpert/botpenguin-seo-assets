@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BotPenguin — Actionable SEO Plan 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&display=swap');
+
+:root {
+  --ink: #0e1117;
+  --paper: #f7f5f0;
+  --paper2: #efecea;
+  --rule: #d4cfc8;
+  --rule2: #c4bfb8;
+  --accent: #c0392b;
+  --accent2: #1a5c8a;
+  --accent3: #1d6b45;
+  --gold: #b8860b;
+  --muted: #6b6560;
+  --tag-bg: #e8e4df;
+  --now: #fff8e1;
+  --now-border: #f0c040;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 40px 48px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 40%;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent, transparent 8px,
+    rgba(255,255,255,0.025) 8px, rgba(255,255,255,0.025) 9px
+  );
+}
+.header-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  flex-wrap: wrap; gap: 20px; position: relative;
+}
+.header-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: #888; margin-bottom: 10px;
+}
+.header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(22px, 4vw, 38px);
+  font-weight: 700; line-height: 1.1;
+  color: var(--paper);
+}
+.header h1 em { color: #f0c040; font-style: normal; }
+.header-stats {
+  display: flex; gap: 28px; flex-wrap: wrap;
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid #2a2a2a;
+  position: relative;
+}
+.hstat { }
+.hstat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 28px; font-weight: 700;
+  color: #f0c040; line-height: 1;
+}
+.hstat-label { font-size: 10px; color: #666; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+
+/* ── CONTROLS ── */
+.controls {
+  background: var(--paper2);
+  border-bottom: 2px solid var(--ink);
+  padding: 14px 48px;
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+}
+.controls-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.filter-btn {
+  padding: 5px 14px; border-radius: 3px;
+  border: 1px solid var(--rule2);
+  background: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; cursor: pointer;
+  color: var(--muted); transition: all .15s;
+  letter-spacing: .5px;
+}
+.filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+.filter-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.filter-sep { width: 1px; height: 20px; background: var(--rule2); margin: 0 4px; }
+.search-wrap { margin-left: auto; position: relative; }
+.search-wrap input {
+  padding: 6px 12px 6px 30px;
+  border: 1px solid var(--rule2);
+  background: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; border-radius: 3px; width: 220px;
+  outline: none; color: var(--ink);
+}
+.search-wrap input:focus { border-color: var(--ink); }
+.search-wrap::before {
+  content: '⌕'; position: absolute; left: 9px; top: 50%;
+  transform: translateY(-50%); font-size: 14px; color: var(--muted);
+  pointer-events: none;
+}
+
+/* ── TABLE WRAPPER ── */
+.table-wrap {
+  padding: 0 48px 60px;
+  overflow-x: auto;
+}
+
+/* ── PHASE HEADER ── */
+.phase-row td {
+  padding: 18px 0 8px;
+  font-family: 'Fraunces', serif;
+  font-size: 17px; font-weight: 600;
+  color: var(--ink);
+  border: none;
+  position: sticky; left: 0;
+}
+.phase-marker {
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.phase-line {
+  display: inline-block; width: 32px; height: 2px;
+  vertical-align: middle; margin-right: 4px;
+}
+
+/* ── MAIN TABLE ── */
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 8px;
+}
+
+/* Column headers */
+.plan-table thead tr {
+  border-bottom: 2px solid var(--ink);
+}
+.plan-table thead th {
+  padding: 10px 14px 10px 0;
+  text-align: left;
+  font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--ink);
+}
+.plan-table thead th:first-child { padding-left: 0; }
+
+/* Rows */
+.plan-table tbody tr {
+  border-bottom: 1px solid var(--rule);
+  transition: background .12s;
+}
+.plan-table tbody tr:hover { background: #ede9e3; }
+.plan-table tbody tr.quick-win { background: var(--now); }
+.plan-table tbody tr.quick-win:hover { background: #fff3cd; }
+
+.plan-table td {
+  padding: 13px 14px 13px 0;
+  vertical-align: top;
+  font-size: 12.5px;
+}
+.plan-table td:first-child { padding-left: 0; }
+
+/* Rank cell */
+.td-rank {
+  width: 42px;
+  font-family: 'Fraunces', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--rule2);
+  line-height: 1;
+  padding-top: 14px !important;
+  white-space: nowrap;
+}
+.td-rank.top3 { color: var(--gold); }
+
+/* Strategy cell */
+.td-strategy { min-width: 220px; max-width: 280px; }
+.strat-name {
+  font-family: 'Fraunces', serif;
+  font-size: 14px; font-weight: 600; line-height: 1.3;
+  margin-bottom: 4px; color: var(--ink);
+}
+.strat-desc {
+  font-size: 11px; color: var(--muted); line-height: 1.5;
+}
+
+/* Tier badge */
+.tier-badge {
+  display: inline-block; padding: 2px 8px;
+  border-radius: 2px; font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; font-weight: 600; white-space: nowrap;
+}
+.tier-s { background: #ddeeff; color: var(--accent2); }
+.tier-a { background: #ffeedd; color: #b05a00; }
+.tier-f { background: #eed9ff; color: #6b21a8; }
+
+/* Action cell */
+.td-action { min-width: 240px; max-width: 320px; }
+.action-steps { list-style: none; }
+.action-steps li {
+  font-size: 11.5px; line-height: 1.5;
+  padding: 2px 0 2px 14px;
+  position: relative; color: var(--ink);
+}
+.action-steps li::before {
+  content: '→'; position: absolute; left: 0;
+  color: var(--muted); font-size: 10px;
+}
+
+/* KPI cell */
+.td-kpi { min-width: 160px; }
+.kpi-item {
+  font-size: 11px; color: var(--muted);
+  padding: 2px 0; display: flex; align-items: flex-start; gap: 6px;
+}
+.kpi-icon { flex-shrink: 0; color: var(--accent3); }
+
+/* Owner cell */
+.td-owner { min-width: 90px; }
+.owner-tag {
+  display: inline-block; padding: 3px 9px;
+  background: var(--tag-bg);
+  border-radius: 2px; font-size: 10px;
+  letter-spacing: .5px; color: var(--ink);
+  white-space: nowrap; margin-bottom: 3px;
+}
+
+/* Impact/Effort */
+.td-impact { width: 90px; }
+.td-effort { width: 90px; }
+.rating-bar {
+  display: flex; gap: 2px; margin-bottom: 3px;
+}
+.rating-pip {
+  width: 10px; height: 10px; border-radius: 1px;
+}
+.pip-5 { background: var(--accent); }
+.pip-4 { background: #e67e22; }
+.pip-3 { background: var(--gold); }
+.pip-2 { background: var(--accent2); }
+.pip-1 { background: var(--rule2); }
+.pip-empty { background: var(--tag-bg); border: 1px solid var(--rule); }
+.rating-label { font-size: 10px; color: var(--muted); letter-spacing: .5px; }
+
+/* Timeline */
+.td-timeline { width: 90px; }
+.timeline-chip {
+  display: inline-block; padding: 3px 9px;
+  border: 1px solid var(--rule2);
+  border-radius: 2px; font-size: 10.5px;
+  color: var(--ink); white-space: nowrap;
+}
+.timeline-chip.urgent { border-color: var(--accent); color: var(--accent); background: #fdecea; }
+.timeline-chip.soon { border-color: var(--gold); color: var(--gold); background: var(--now); }
+
+/* Status / Quick win flag */
+.td-flag { width: 70px; text-align: center; }
+.flag {
+  display: inline-block; padding: 3px 8px;
+  font-size: 9px; letter-spacing: 1px;
+  text-transform: uppercase; font-weight: 600;
+  border-radius: 2px;
+}
+.flag-now { background: var(--accent); color: white; }
+.flag-q1 { background: var(--ink); color: var(--paper); }
+.flag-q2 { background: var(--tag-bg); color: var(--muted); }
+.flag-ongoing { background: #ddf4e8; color: var(--accent3); }
+
+/* Quick-win glow row */
+.quick-win td:first-child::before {
+  content: '⚡';
+  font-size: 10px; margin-right: 2px;
+  vertical-align: middle;
+}
+
+/* ── LEGEND ── */
+.legend {
+  display: flex; flex-wrap: wrap; gap: 20px;
+  padding: 16px 48px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 2px solid var(--ink);
+  background: var(--paper2);
+  font-size: 10.5px; color: var(--muted);
+  align-items: center;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+
+/* ── SUMMARY FOOTER ── */
+.summary {
+  padding: 28px 48px 40px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1px; background: var(--rule);
+  border-top: 2px solid var(--ink);
+}
+.sum-cell {
+  background: var(--paper);
+  padding: 20px 22px;
+}
+.sum-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.sum-val {
+  font-family: 'Fraunces', serif;
+  font-size: 22px; font-weight: 700; line-height: 1;
+  color: var(--ink);
+}
+.sum-sub { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px) {
+  .header { padding: 28px 20px 24px; }
+  .controls { padding: 12px 20px; }
+  .table-wrap { padding: 0 20px 40px; }
+  .legend { padding: 14px 20px; }
+  .summary { padding: 20px 20px 32px; }
+  .search-wrap { display: none; }
+}
+
+/* ── PRINT ── */
+@media print {
+  .controls { display: none; }
+  .plan-table tbody tr:hover { background: none; }
+}
+
+/* ── HIDDEN ROWS (filtering) ── */
+tr.hidden { display: none; }
+
+/* ── PROGRESS COLUMN ── */
+.td-progress { width: 100px; }
+.prog-track {
+  height: 4px; background: var(--tag-bg);
+  border-radius: 2px; margin-top: 6px; overflow: hidden;
+}
+.prog-fill { height: 100%; border-radius: 2px; }
+.prog-high { background: var(--accent); }
+.prog-med { background: var(--gold); }
+.prog-low { background: var(--accent2); }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="header-label">BotPenguin · Organic Growth Division · 2026</div>
+      <h1>Actionable SEO <em>Execution Plan</em></h1>
+    </div>
+    <div style="text-align:right;position:relative;">
+      <div style="font-size:10px;color:#555;letter-spacing:1px;text-transform:uppercase;">Last Updated</div>
+      <div style="font-family:'Fraunces',serif;font-size:22px;color:#f0c040;font-weight:600;">March 2026</div>
+      <div style="font-size:10px;color:#555;margin-top:4px;">Google Core Update Active</div>
+    </div>
+  </div>
+  <div class="header-stats">
+    <div class="hstat"><div class="hstat-num">35</div><div class="hstat-label">Total Actions</div></div>
+    <div class="hstat"><div class="hstat-num">10</div><div class="hstat-label">Start This Week</div></div>
+    <div class="hstat"><div class="hstat-num">3</div><div class="hstat-label">Tiers</div></div>
+    <div class="hstat"><div class="hstat-num">90</div><div class="hstat-label">Day Roadmap</div></div>
+    <div class="hstat"><div class="hstat-num">8</div><div class="hstat-label">Competitors Mapped</div></div>
+  </div>
+</div>
+
+<!-- ── LEGEND ── -->
+<div class="legend">
+  <span style="font-weight:600;color:var(--ink);font-size:11px;">LEGEND:</span>
+  <div class="legend-item"><span style="background:#ddeeff;color:var(--accent2);padding:2px 6px;font-size:9px;border-radius:2px;font-weight:600;letter-spacing:1px;">STANDARD</span> Core SEO must-haves</div>
+  <div class="legend-item"><span style="background:#ffeedd;color:#b05a00;padding:2px 6px;font-size:9px;border-radius:2px;font-weight:600;letter-spacing:1px;">ADVANCED</span> Compounding advantage plays</div>
+  <div class="legend-item"><span style="background:#eed9ff;color:#6b21a8;padding:2px 6px;font-size:9px;border-radius:2px;font-weight:600;letter-spacing:1px;">FUTURISTIC</span> First-mover 2026–27</div>
+  <div class="legend-item">
+    <span style="background:var(--accent);color:white;padding:2px 6px;font-size:9px;border-radius:2px;font-weight:600;letter-spacing:1px;">NOW</span> Start immediately
+  </div>
+  <div class="legend-item"><span style="background:var(--now);border:1px solid var(--now-border);padding:1px 5px;font-size:10px;border-radius:2px;">⚡ row</span> = Quick win (&lt;1 week)</div>
+  <div class="legend-item" style="margin-left:auto;">
+    <span style="font-size:10px;">Impact pips: </span>
+    <span style="display:inline-flex;gap:2px;align-items:center;margin-left:4px;">
+      <span style="width:10px;height:10px;background:var(--accent);border-radius:1px;display:inline-block;"></span>
+      <span style="font-size:10px;">= 1 unit (5 = max)</span>
+    </span>
+  </div>
+</div>
+
+<!-- ── CONTROLS ── -->
+<div class="controls">
+  <span class="controls-label">Filter:</span>
+  <button class="filter-btn active" onclick="filterRows('all', this)">All (35)</button>
+  <div class="filter-sep"></div>
+  <button class="filter-btn" onclick="filterRows('now', this)">⚡ Start Now</button>
+  <button class="filter-btn" onclick="filterRows('q1', this)">Month 1</button>
+  <button class="filter-btn" onclick="filterRows('q2', this)">Month 2–3</button>
+  <div class="filter-sep"></div>
+  <button class="filter-btn" onclick="filterTier('standard', this)">Standard</button>
+  <button class="filter-btn" onclick="filterTier('advanced', this)">Advanced</button>
+  <button class="filter-btn" onclick="filterTier('futuristic', this)">Futuristic</button>
+  <div class="filter-sep"></div>
+  <button class="filter-btn" onclick="filterRows('high-impact', this)">High Impact Only</button>
+  <div class="search-wrap">
+    <input type="text" placeholder="Search actions..." oninput="searchRows(this.value)" />
+  </div>
+</div>
+
+<!-- ── TABLE ── -->
+<div class="table-wrap">
+<table class="plan-table" id="mainTable">
+<thead>
+  <tr>
+    <th style="width:36px;">#</th>
+    <th>Strategy</th>
+    <th>Tier</th>
+    <th>Exact Actions (What to Do)</th>
+    <th>Success KPIs</th>
+    <th>Owner</th>
+    <th>Impact</th>
+    <th>Effort</th>
+    <th>Timeline</th>
+    <th>Phase</th>
+  </tr>
+</thead>
+<tbody>
+
+<!-- ══ PHASE 1: IMMEDIATE ══ -->
+<tr class="phase-row"><td colspan="10"><div class="phase-marker"><span class="phase-line" style="background:var(--accent);"></span><span style="color:var(--accent);">Phase 1 — Immediate (Week 1–2, Zero Cost)</span></div></td></tr>
+
+<tr class="quick-win" data-tier="futuristic" data-phase="now" data-impact="5">
+  <td class="td-rank top3">1</td>
+  <td class="td-strategy">
+    <div class="strat-name">Create llms.txt File</div>
+    <div class="strat-desc">Tells AI systems how to understand your site. 99% of SaaS hasn't done this.</div>
+  </td>
+  <td><span class="tier-badge tier-f">Futuristic</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Create <code>/llms.txt</code> at botpenguin.com/llms.txt</li>
+      <li>Include: company description, key product pages, use-cases, contact</li>
+      <li>Allow GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot in robots.txt</li>
+      <li>Test: <code>curl https://botpenguin.com/llms.txt</code></li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>AI crawlers indexing site</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>ChatGPT cites BotPenguin within 60 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Dev</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span></div>
+    <div class="rating-label">Very High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-1"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">1 Hour</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Day 1</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="advanced" data-phase="now" data-impact="5">
+  <td class="td-rank top3">2</td>
+  <td class="td-strategy">
+    <div class="strat-name">Bing Webmaster Tools Setup</div>
+    <div class="strat-desc">ChatGPT uses Bing for web access. Not in Bing = invisible in ChatGPT answers.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Sign up at bing.com/webmasters — verify domain ownership</li>
+      <li>Submit XML sitemap to Bing</li>
+      <li>Check all pages indexed; flag crawl errors</li>
+      <li>Enable Bing URL Inspection Tool for key pages</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>100% key pages indexed in Bing</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Zero crawl errors in Bing WMT</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO / Dev</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span></div>
+    <div class="rating-label">Very High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-1"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">1–2 Hours</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Day 1</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="advanced" data-phase="now" data-impact="5">
+  <td class="td-rank top3">3</td>
+  <td class="td-strategy">
+    <div class="strat-name">Wikidata Entity Entry</div>
+    <div class="strat-desc">More critical than Wikipedia for Google Knowledge Panel. Takes 2 hours. Only Intercom has this.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Go to wikidata.org → Create New Item</li>
+      <li>Add: company name, founding year, HQ city, industry, website</li>
+      <li>Link sameAs: Crunchbase, LinkedIn, Twitter, AngelList</li>
+      <li>Add Organization schema to homepage with sameAs properties</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Wikidata entry live with Q-ID</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Google Knowledge Panel appears within 90 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-1"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">2 Hours</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Day 1–2</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="standard" data-phase="now" data-impact="5">
+  <td class="td-rank">4</td>
+  <td class="td-strategy">
+    <div class="strat-name">Respond to All Negative Reviews</div>
+    <div class="strat-desc">Sitejabber 3.3★ from 8 reviews. Actively killing conversions and AI trust signals.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Respond to every negative review on Sitejabber + Trustpilot professionally</li>
+      <li>Acknowledge issue, offer resolution, leave contact email</li>
+      <li>Upgrade G2 profile plan (currently "limited features")</li>
+      <li>Email top 50 active users requesting G2 reviews (offer incentive)</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>100% of reviews responded to</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>G2 reviews: 6 → 50+ within 60 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Sitejabber: 3.3★ → 4.0★+ within 90 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">CS / Mktg</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span></div>
+    <div class="rating-label">Critical</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">2 Days</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Day 1–3</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="advanced" data-phase="now" data-impact="5">
+  <td class="td-rank">5</td>
+  <td class="td-strategy">
+    <div class="strat-name">Add FAQPage Schema to Top 10 Posts</div>
+    <div class="strat-desc">Immediate rich snippets + AI Overview citation eligibility. Under-30-minute task per page.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Identify top 10 blog posts by traffic in GSC</li>
+      <li>Add FAQPage JSON-LD schema to each (3–5 Q&amp;A pairs per page)</li>
+      <li>Add HowTo schema to all tutorial/guide pages</li>
+      <li>Validate with Google Rich Results Test</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>FAQ rich snippets appearing in SERPs</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>CTR increase on affected pages (+10–20%)</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO / Dev</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-1"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">1 Day</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Day 2–3</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="advanced" data-phase="now" data-impact="5">
+  <td class="td-rank">6</td>
+  <td class="td-strategy">
+    <div class="strat-name">Answer-First Paragraphs on Top 50 Pages</div>
+    <div class="strat-desc">40–60 word direct answer at start of each page. Increases AI Overview citation probability by ~40%.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>List top 50 pages by organic traffic from GSC</li>
+      <li>Add a 40–60 word direct answer box at the very top of each page</li>
+      <li>Format as: "BotPenguin is a [concise definition]. It helps [audience] achieve [outcome] by [mechanism]."</li>
+      <li>Add statistics + cited sources to each page body</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>BotPenguin cited in Google AI Overviews</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Perplexity/ChatGPT mentions within 90 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span></div>
+    <div class="rating-label">Very High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">3–4 Days</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Week 1</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="standard" data-phase="now" data-impact="4">
+  <td class="td-rank">7</td>
+  <td class="td-strategy">
+    <div class="strat-name">Pitch Top 10 "Best Chatbot" Listicles</div>
+    <div class="strat-desc">BotPenguin is in zero AI-referenced "best chatbot" articles. Getting into 3 triggers citation cascades.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Search Google: "best chatbot builder 2026" — list top 10 ranking articles</li>
+      <li>Find author emails via Hunter.io</li>
+      <li>Pitch inclusion: free account, comparison data table, press kit</li>
+      <li>Target: Zapier, G2, Appy Pie, Chatimize, Emergent.sh</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Listed in 5+ major "best chatbot" articles</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Referral traffic from listicle sites</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Mktg / PR</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-tip pip-empty"></span></div>
+    <div class="rating-label">3 Days</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Week 1</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="advanced" data-phase="now" data-impact="4">
+  <td class="td-rank">8</td>
+  <td class="td-strategy">
+    <div class="strat-name">Reddit Account Creation + Karma Building</div>
+    <div class="strat-desc">Zero Reddit presence for BotPenguin. Reddit DA 91 ranks within 24–48 hrs. LLMs pull from Reddit for SaaS recs.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Create 2 branded-adjacent Reddit accounts (real names, not "BotPenguinStaff")</li>
+      <li>Join: r/chatbots, r/SaaS, r/ecommerce, r/smallbusiness, r/entrepreneur</li>
+      <li>Answer 2–3 questions daily for 4–6 weeks (no promotion yet)</li>
+      <li>After 500+ karma: begin natural BotPenguin mentions in relevant threads</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>500+ karma on accounts within 30 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>"BotPenguin reddit" search returns results</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>1 Reddit thread ranking in Google within 60 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span></div>
+    <div class="rating-label">Very High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Daily Time</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Start Today</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="standard" data-phase="now" data-impact="4">
+  <td class="td-rank">9</td>
+  <td class="td-strategy">
+    <div class="strat-name">Technical SEO Audit</div>
+    <div class="strat-desc">Google March 2026 update penalizes technical debt. Fix 404s, canonicals, Core Web Vitals before building more content.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Run full Screaming Frog crawl — export all issues</li>
+      <li>Fix: 404 errors, redirect chains, duplicate title/meta tags</li>
+      <li>Audit Core Web Vitals in GSC — fix LCP &gt; 2.5s pages</li>
+      <li>Ensure XML sitemap is clean and submitted to both Google + Bing</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Zero 404 errors in GSC</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Core Web Vitals: all pages "Good"</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Coverage report: 0 excluded pages (valid)</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Dev / SEO</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">3–5 Days</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip urgent">Week 1–2</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<tr class="quick-win" data-tier="standard" data-phase="now" data-impact="4">
+  <td class="td-rank">10</td>
+  <td class="td-strategy">
+    <div class="strat-name">Quora Presence — Top 20 Chatbot Questions</div>
+    <div class="strat-desc">Top chatbot Quora answers rank in Google and list competitors — not BotPenguin. Quick to execute.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Search Quora for "best chatbot builder", "WhatsApp chatbot", "chatbot for business"</li>
+      <li>Write detailed, value-first answers (400+ words) to top 20 questions</li>
+      <li>Mention BotPenguin naturally in context (not as first line)</li>
+      <li>Add credentials and BotPenguin link in Quora bio</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>20 Quora answers published</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>3+ Quora answers ranking in Google top 10</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium-High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">1 Week</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Week 2</span></td>
+  <td class="td-flag"><span class="flag flag-now">Now</span></td>
+</tr>
+
+<!-- ══ PHASE 2: MONTH 1 ══ -->
+<tr class="phase-row"><td colspan="10"><div class="phase-marker"><span class="phase-line" style="background:var(--gold);"></span><span style="color:var(--gold);">Phase 2 — Month 1 (Core Infrastructure)</span></div></td></tr>
+
+<tr data-tier="standard" data-phase="q1" data-impact="5">
+  <td class="td-rank">11</td>
+  <td class="td-strategy">
+    <div class="strat-name">Multilingual SEO — Spanish Launch</div>
+    <div class="strat-desc">LATAM conversational commerce = $18.2B. "Chatbot para WhatsApp" has moderate competition, no major competitor dominates yet (only Landbot has Spanish).</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Set up /es/ subdirectory (not subdomain)</li>
+      <li>Translate top 20 pages with native speaker review (not raw machine translation)</li>
+      <li>Target keywords: "chatbot para WhatsApp", "bot para empresas", "chatbot gratis"</li>
+      <li>Implement hreflang tags (validate via hreflang.org — 75% of implementations have errors)</li>
+      <li>Create separate Google Search Console property for /es/</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>20 Spanish pages indexed in GSC</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Ranking in top 20 for "chatbot para WhatsApp" within 90 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>LATAM organic traffic: 0 → 500+ sessions/month</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO / Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span></div>
+    <div class="rating-label">Highest</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Weeks 3–4</span></td>
+  <td class="td-flag"><span class="flag flag-q1">Month 1</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q1" data-impact="5">
+  <td class="td-rank">12</td>
+  <td class="td-strategy">
+    <div class="strat-name">Full Schema Markup Deployment</div>
+    <div class="strat-desc">Less than 1/3 of SaaS sites use schema correctly. Bing uses schema to feed LLMs. Immediate SERP + AI advantage.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>WebApplication schema on all product/feature pages</li>
+      <li>Organization schema with sameAs on homepage</li>
+      <li>AggregateRating schema on pricing page (pulling G2/Capterra ratings)</li>
+      <li>Product + Offer + PriceSpecification schema on pricing page</li>
+      <li>VideoObject schema on all pages with embedded videos</li>
+      <li>BreadcrumbList schema on all pages</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Rich snippets appearing for 20+ pages in GSC</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Star ratings visible in branded search results</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Dev / SEO</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Week 3–4</span></td>
+  <td class="td-flag"><span class="flag flag-q1">Month 1</span></td>
+</tr>
+
+<tr data-tier="standard" data-phase="q1" data-impact="5">
+  <td class="td-rank">13</td>
+  <td class="td-strategy">
+    <div class="strat-name">Topical Authority Cluster Build</div>
+    <div class="strat-desc">Google March 2026 rewards topical depth over broad shallow coverage. Build 5 core topic clusters.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Define 5 pillar topics: WhatsApp Chatbots, AI Customer Support, Lead Gen Bots, E-commerce Automation, Appointment Booking</li>
+      <li>Create 1 pillar page (2,000+ words) per topic</li>
+      <li>Plan 10 supporting articles per pillar (50 articles total)</li>
+      <li>Build internal linking: every supporting article → pillar page + 2 related supporting pages</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>5 pillar pages live with 10+ internal links each</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Topical authority score improvement in Ahrefs</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content / SEO</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 1</span></td>
+  <td class="td-flag"><span class="flag flag-q1">Month 1</span></td>
+</tr>
+
+<tr data-tier="standard" data-phase="q1" data-impact="4">
+  <td class="td-rank">14</td>
+  <td class="td-strategy">
+    <div class="strat-name">Shopify App Store Listing</div>
+    <div class="strat-desc">Tidio has 30,505 Shopify installs. BotPenguin has no native listing. Free tier is the conversion hook.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Build native Shopify app (or connect existing embed via Shopify API)</li>
+      <li>Submit to Shopify App Store with polished listing copy + screenshots</li>
+      <li>Lead with free tier prominently in listing</li>
+      <li>Set up review solicitation email: trigger 2 weeks after install</li>
+      <li>Repeat for WordPress Plugin Directory (target: 1,000+ active installs)</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Shopify listing live with 4.5★+</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>500+ Shopify installs within 90 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>WordPress: 1,000+ active installs</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Dev / Product</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 1</span></td>
+  <td class="td-flag"><span class="flag flag-q1">Month 1</span></td>
+</tr>
+
+<tr data-tier="standard" data-phase="q1" data-impact="4">
+  <td class="td-rank">15</td>
+  <td class="td-strategy">
+    <div class="strat-name">Content Freshness System</div>
+    <div class="strat-desc">LLM citations decay within 1–2 months. March 2026 update explicitly rewards fresh, updated content.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Identify top 50 traffic pages in GSC — schedule quarterly refresh</li>
+      <li>Add "Last updated [date]" timestamp prominently on each post</li>
+      <li>On each refresh: update statistics, add new examples, expand thin sections</li>
+      <li>Re-submit updated URLs to Google via GSC "Request Indexing"</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>All top 50 pages refreshed quarterly</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Ranking stability after updates (vs. decay)</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-1"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Ongoing</span></td>
+  <td class="td-flag"><span class="flag flag-ongoing">Ongoing</span></td>
+</tr>
+
+<!-- ══ PHASE 3: MONTH 2 ══ -->
+<tr class="phase-row"><td colspan="10"><div class="phase-marker"><span class="phase-line" style="background:var(--accent2);"></span><span style="color:var(--accent2);">Phase 3 — Month 2 (Channel Expansion)</span></div></td></tr>
+
+<tr data-tier="standard" data-phase="q2" data-impact="5">
+  <td class="td-rank">16</td>
+  <td class="td-strategy">
+    <div class="strat-name">Hindi SEO Launch</div>
+    <div class="strat-desc">India's chatbot market = $316.5M, 25.9% CAGR. Hindi chatbot SaaS SEO = near-zero competition. BotPenguin is India-based — massive home-turf advantage.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Launch /hi/ subdirectory with 15 core pages</li>
+      <li>Target keywords: "व्हाट्सऐप चैटबॉट", "chatbot kaise banaye", "AI customer support Hindi"</li>
+      <li>Create India-specific landing pages: Indian SMB use-cases, festive season automation</li>
+      <li>Partner with Indian SaaS/startup blogs for co-marketing content</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Top 5 for "WhatsApp chatbot India" within 90 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>India organic traffic +300% from baseline</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO / Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span></div>
+    <div class="rating-label">Highest</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 2</span></td>
+</tr>
+
+<tr data-tier="standard" data-phase="q2" data-impact="5">
+  <td class="td-rank">17</td>
+  <td class="td-strategy">
+    <div class="strat-name">Portuguese SEO Launch (Brazil)</div>
+    <div class="strat-desc">Brazil has 148M WhatsApp users. "Chatbot para WhatsApp" in Portuguese has low competition. Only HubSpot + Chatfuel have Portuguese content.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Launch /pt/ subdirectory focused on Brazil (pt-BR hreflang)</li>
+      <li>Translate + localize: pricing page, WhatsApp feature page, top 15 posts</li>
+      <li>Target: "chatbot para WhatsApp", "automatizar atendimento", "bot grátis"</li>
+      <li>Research Brazilian SaaS directories for listings</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Top 10 for "chatbot para WhatsApp Brasil"</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Brazil organic traffic: 0 → 1,000+ sessions/month</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO / Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span></div>
+    <div class="rating-label">Highest</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 2</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="5">
+  <td class="td-rank">18</td>
+  <td class="td-strategy">
+    <div class="strat-name">Free Tool Suite Launch</div>
+    <div class="strat-desc">None of 8 competitors offer free tools. HubSpot's Website Grader earned 300+ referring domains. Proven backlink + lead gen flywheel.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Build WhatsApp Business API Cost Calculator (highest LATAM search volume)</li>
+      <li>Build Chatbot vs Human Agent Cost Comparison tool</li>
+      <li>Build AI Chatbot Readiness Assessment Quiz (lead qualifier)</li>
+      <li>Host all tools at /tools/ hub page with internal links from related blog posts</li>
+      <li>Add FAQ schema + CTA to each tool page</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>3 tools live within 60 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>50+ backlinks to /tools/ within 6 months</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Tool pages: 500+ monthly sessions each</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Dev / Product</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 2</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="4">
+  <td class="td-rank">19</td>
+  <td class="td-strategy">
+    <div class="strat-name">YouTube Tutorial Channel Launch</div>
+    <div class="strat-desc">BotPenguin has zero YouTube tutorial presence. Botpress posts daily and dominates video carousels. Dual-platform ranking opportunity.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Create/optimize YouTube channel with keyword-rich description</li>
+      <li>Publish 4 founding videos: WhatsApp chatbot setup, HubSpot integration, BotPenguin vs Tidio, lead gen bot tutorial</li>
+      <li>Add chapters/timestamps to every video (triggers Google Key Moments)</li>
+      <li>Upload full transcripts to all videos</li>
+      <li>Embed videos on corresponding blog posts + add VideoObject schema</li>
+      <li>Cadence: 1 video per week minimum</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>1,000 YouTube subscribers within 90 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Video carousels in Google for 5+ target keywords</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>500+ views per video average</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content / Video</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 2</span></td>
+</tr>
+
+<tr data-tier="standard" data-phase="q2" data-impact="4">
+  <td class="td-rank">20</td>
+  <td class="td-strategy">
+    <div class="strat-name">Blog Cadence — 15 Posts/Month</div>
+    <div class="strat-desc">Companies publishing 15+ blog posts/month generate ~1,200 new leads/month. Build and maintain editorial calendar with intent mapping.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Build 3-month editorial calendar in Notion/Sheets</li>
+      <li>Map each post to buyer stage: TOFU (awareness) / MOFU (comparison) / BOFU (decision)</li>
+      <li>Prioritize BOFU first: "BotPenguin vs X", "[Use Case] chatbot setup guide"</li>
+      <li>Use AI to accelerate drafts; human expert review for E-E-A-T signals</li>
+      <li>Every post: author bio, publication date, sources cited, internal links</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>15 blog posts published per month</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Organic blog traffic: +50% within 90 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Blog → trial signups tracked in GA4</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Ongoing</span></td>
+  <td class="td-flag"><span class="flag flag-ongoing">Ongoing</span></td>
+</tr>
+
+<!-- ══ PHASE 4: MONTH 3 ══ -->
+<tr class="phase-row"><td colspan="10"><div class="phase-marker"><span class="phase-line" style="background:var(--accent3);"></span><span style="color:var(--accent3);">Phase 4 — Month 3 (Authority Building)</span></div></td></tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="5">
+  <td class="td-rank">21</td>
+  <td class="td-strategy">
+    <div class="strat-name">Original Research Report</div>
+    <div class="strat-desc">Tidio's "80+ Chatbot Statistics" earns links constantly. BotPenguin has zero data assets. Digital PR = 3–5× more links than outreach alone.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Commission "State of AI Chatbots 2026" — survey 500+ businesses via Typeform</li>
+      <li>Create "BotPenguin Platform Statistics" page using real platform data (messages processed, bot deployments, industries)</li>
+      <li>Publish with full methodology, data download, and embeddable charts</li>
+      <li>Register on Connectively (HARO), Qwoted, Featured.com for journalist queries</li>
+      <li>Newsjack: publish analysis within 24 hrs of major AI announcements</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Research report earns 30+ referring domains</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Stats page ranking top 3 for "chatbot statistics 2026"</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>3+ press mentions per month from journalist outreach</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content / Mktg</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-5"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium-High</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 3</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 3</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="4">
+  <td class="td-rank">22</td>
+  <td class="td-strategy">
+    <div class="strat-name">Programmatic SEO Expansion</div>
+    <div class="strat-desc">Foundation exists (60+ pages). Expand to all 80+ integrations, 30+ industries, competitor pricing pages, and third-party comparison plays.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Create "chatbot for [integration]" pages for all 80+ integrations</li>
+      <li>Expand industry verticals: legal, finance, restaurant, retail, fitness, automotive, nonprofit, real estate</li>
+      <li>Build "[Competitor] pricing 2026" pages targeting high-commercial-intent searches</li>
+      <li>Add "Tidio vs Crisp" style pages — BotPenguin as recommended option</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>150+ programmatic pages live (from 60)</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Long-tail keyword traffic: +30% within 120 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO / Dev</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 3</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 3</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="4">
+  <td class="td-rank">23</td>
+  <td class="td-strategy">
+    <div class="strat-name">Podcast Guesting Campaign</div>
+    <div class="strat-desc">12 guest spots = 18 DA 70+ backlinks via show notes. Google scans audio for relevance. Builds founder entity for E-E-A-T signals.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Build target list: SaaStr, SaaS Revolution Show, Scale or Die, Chatbots Life, Marketing Over Coffee</li>
+      <li>Create founder media kit: bio, headshot, 3 topic pitches, past coverage links</li>
+      <li>Send personalized pitches — 5/week, track opens + responses</li>
+      <li>For each appearance: repurpose as blog post + YouTube clip + LinkedIn post</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>10+ podcast appearances booked within 90 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>15+ DA 60+ backlinks from show notes</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Founder / PR</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low–Med</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 3</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 3</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="4">
+  <td class="td-rank">24</td>
+  <td class="td-strategy">
+    <div class="strat-name">Branded Discord Community</div>
+    <div class="strat-desc">Botpress has 30K+ Discord members. Tally saw ChatGPT become #1 referral (125K visits/month) via UGC. Every indexed thread is an SEO asset.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Launch BotPenguin Discord with channels: #templates, #integrations, #troubleshooting, #showcase, #announcements</li>
+      <li>Host weekly AMA (30 min) — every session generates a summary blog post</li>
+      <li>Invite top 200 power users via in-app notification</li>
+      <li>Create "Community Champion" program: reward top contributors with free Pro access</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>1,000+ Discord members within 90 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Community-generated content driving referral traffic</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Community / Mktg</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium-High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 3</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 3</span></td>
+</tr>
+
+<tr data-tier="futuristic" data-phase="q2" data-impact="4">
+  <td class="td-rank">25</td>
+  <td class="td-strategy">
+    <div class="strat-name">AI Citation Tracking System</div>
+    <div class="strat-desc">You can't optimize AI visibility without measuring it. Set up monthly tracking of BotPenguin's share of voice across ChatGPT, Perplexity, Gemini, and Google AI Overviews.</div>
+  </td>
+  <td><span class="tier-badge tier-f">Futuristic</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Set up Semrush AI Content Tracking (monitors AI Overview inclusion)</li>
+      <li>Query ChatGPT, Perplexity, Gemini monthly: "best chatbot builder", "WhatsApp chatbot tool", "chatbot for Shopify" — log if BotPenguin appears</li>
+      <li>Create tracking spreadsheet: query → AI engine → BotPenguin mentioned? → sentiment → competitor cited</li>
+      <li>Add GA4 AI referral filter: track traffic from ChatGPT, Perplexity, Claude</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>AI citation tracker set up and running monthly</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>BotPenguin cited in 30%+ of tracked AI queries within 6 months</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-1"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 3</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 3</span></td>
+</tr>
+
+<!-- ══ ONGOING ══ -->
+<tr class="phase-row"><td colspan="10"><div class="phase-marker"><span class="phase-line" style="background:var(--muted);"></span><span style="color:var(--muted);">Ongoing — Compounding Plays (Month 2–6+)</span></div></td></tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="4">
+  <td class="td-rank">26</td>
+  <td class="td-strategy">
+    <div class="strat-name">Reddit AMA — Founder in r/SaaS</div>
+    <div class="strat-desc">A well-executed AMA becomes a reusable SEO asset ranking for dozens of long-tail keywords for years. One post, compounding forever.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Build 500+ karma on accounts first (see Action #8)</li>
+      <li>Post AMA in r/SaaS: "I'm [Founder], CEO of BotPenguin — ask me anything about building chatbots for 193 countries"</li>
+      <li>Prepare 20 detailed answers in advance to respond quickly</li>
+      <li>Repurpose best Q&amp;As as standalone blog posts</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>200+ upvotes on AMA post</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>AMA thread ranking in Google within 30 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Founder</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">High</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low–Med</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2–3</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 2</span></td>
+</tr>
+
+<tr data-tier="futuristic" data-phase="q2" data-impact="4">
+  <td class="td-rank">27</td>
+  <td class="td-strategy">
+    <div class="strat-name">Google Discover Optimization</div>
+    <div class="strat-desc">February 2026 Discover update rewards locally relevant, expert, original content. Discover can drive millions of impressions with zero active search intent.</div>
+  </td>
+  <td><span class="tier-badge tier-f">Futuristic</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Add high-quality hero images (1200px+) to all blog posts</li>
+      <li>Create timely, news-adjacent content (react to AI announcements within 24 hrs)</li>
+      <li>Add open graph tags: og:image, og:title optimized for click-through</li>
+      <li>Build E-E-A-T signals: author bios with credentials, sources cited, first-hand expertise signals</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Discover impressions visible in GSC</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>10,000+ Discover impressions/month within 90 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content / Design</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Ongoing</span></td>
+  <td class="td-flag"><span class="flag flag-ongoing">Ongoing</span></td>
+</tr>
+
+<tr data-tier="futuristic" data-phase="q2" data-impact="3">
+  <td class="td-rank">28</td>
+  <td class="td-strategy">
+    <div class="strat-name">Short-Form Video SEO (Shorts / Reels)</div>
+    <div class="strat-desc">Google now indexes TikTok and Instagram Reels. Chatbot query video carousels are appearing. 60-sec tutorial shorts rank in Google AND drive platform discovery.</div>
+  </td>
+  <td><span class="tier-badge tier-f">Futuristic</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Create "Chatbot Hack of the Day" series: 60-sec YouTube Shorts</li>
+      <li>Repurpose as Instagram Reels + TikTok simultaneously</li>
+      <li>Target keywords in video titles: "chatbot trick", "WhatsApp automation hack", "free chatbot setup"</li>
+      <li>Add text captions for SEO parsing + accessibility</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Shorts/Reels appearing in Google video carousels</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>10,000+ cumulative views within 90 days</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content / Video</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2+</span></td>
+  <td class="td-flag"><span class="flag flag-ongoing">Ongoing</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="3">
+  <td class="td-rank">29</td>
+  <td class="td-strategy">
+    <div class="strat-name">Substack Publication</div>
+    <div class="strat-desc">Substack content ranks in top 10 for 18%+ of brand-name searches per Ahrefs. Fully Google-indexed. Low effort, compounding mention velocity.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Launch "The Chatbot Chronicle" on Substack</li>
+      <li>Weekly: AI customer support trends, chatbot case studies, WhatsApp automation tips</li>
+      <li>Cross-link to BotPenguin features naturally within content</li>
+      <li>Promote each issue on LinkedIn for subscriber growth</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>500+ Substack subscribers within 60 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Substack posts appearing in Google top 10 for brand queries</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2+</span></td>
+  <td class="td-flag"><span class="flag flag-ongoing">Ongoing</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="3">
+  <td class="td-rank">30</td>
+  <td class="td-strategy">
+    <div class="strat-name">Product Hunt Relaunch</div>
+    <div class="strat-desc">Currently: 2 reviews, 4 followers — completely abandoned. A well-executed launch drives thousands of visits, backlinks, and brand signals in 24 hours.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Plan relaunch around newest major feature release</li>
+      <li>Prepare: demo video (90 sec), tagline, detailed description, press kit</li>
+      <li>Email top 500 users the day before launch asking for upvotes + comments</li>
+      <li>Post in relevant Slack communities + Reddit the day of launch</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Top 5 Product of the Day</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>500+ upvotes, 50+ reviews</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>1,000+ signups within 48 hrs of launch</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Mktg / Product</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2–3</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 2</span></td>
+</tr>
+
+<tr data-tier="futuristic" data-phase="q2" data-impact="3">
+  <td class="td-rank">31</td>
+  <td class="td-strategy">
+    <div class="strat-name">Partner Ecosystem SEO</div>
+    <div class="strat-desc">Each partner site = brand mention + backlink source at zero content cost. Intercom's HubSpot co-branded page captures "[Tool] + HubSpot" searches.</div>
+  </td>
+  <td><span class="tier-badge tier-f">Futuristic</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Create co-branded landing pages with HubSpot, Shopify, Salesforce integrations</li>
+      <li>Build tiered agency certification: Bronze → Gold. Certified agencies must publish one BotPenguin case study</li>
+      <li>Build public SEO-optimized partner directory at /partners/</li>
+      <li>Encourage white-label resellers to publish blog posts mentioning BotPenguin</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>20+ partner-authored pieces mentioning BotPenguin</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>50+ backlinks from partner domains within 6 months</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Partnerships</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-4"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Med-High</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 3–6</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 3</span></td>
+</tr>
+
+<tr data-tier="advanced" data-phase="q2" data-impact="3">
+  <td class="td-rank">32</td>
+  <td class="td-strategy">
+    <div class="strat-name">Branded Podcast Launch</div>
+    <div class="strat-desc">Zero competitors have a podcast. Drift's "Seeking Wisdom" hit Top 5 iTunes Business Y1. Each episode = 6 SEO assets. The chatbot podcast space is completely empty.</div>
+  </td>
+  <td><span class="tier-badge tier-a">Advanced</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Launch "AI in the Wild" podcast — conversational AI, chatbot use-cases, SaaS growth (not product promotion)</li>
+      <li>Episodes: 30 min, bi-weekly. Guest: SaaS founders, CX leaders, AI researchers</li>
+      <li>Each episode: show notes blog post + transcript + YouTube video version + email newsletter feature</li>
+      <li>Submit to: Apple Podcasts, Spotify, Google Podcasts, Pocket Casts</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>1,000+ downloads per episode within 90 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Show notes pages ranking for guest name + chatbot</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content / Founder</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 3–4</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 3</span></td>
+</tr>
+
+<tr data-tier="standard" data-phase="q2" data-impact="3">
+  <td class="td-rank">33</td>
+  <td class="td-strategy">
+    <div class="strat-name">Google Business Profile + Local SEO</div>
+    <div class="strat-desc">India-based company with near-zero Hindi chatbot competition. Local SEO + GBP gives BotPenguin a home-turf dominance opportunity.</div>
+  </td>
+  <td><span class="tier-badge tier-s">Standard</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Claim and fully optimize Google Business Profile</li>
+      <li>Add: description, services, photos, Q&amp;A section, products</li>
+      <li>Add LocalBusiness schema to homepage</li>
+      <li>Create city-specific landing pages for Jaipur, Delhi, Mumbai, Bangalore, Hyderabad</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>GBP fully optimized with 20+ reviews</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Local pack appearance for "chatbot company India"</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">SEO</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-1"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 2</span></td>
+</tr>
+
+<tr data-tier="futuristic" data-phase="q2" data-impact="3">
+  <td class="td-rank">34</td>
+  <td class="td-strategy">
+    <div class="strat-name">Content Repurposing Engine</div>
+    <div class="strat-desc">Each piece of content should live in 7+ formats. Maximize ROI from every research or writing investment across all organic channels simultaneously.</div>
+  </td>
+  <td><span class="tier-badge tier-f">Futuristic</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Build repurposing SOP: every blog post → LinkedIn article + Twitter/X thread + YouTube outline + newsletter snippet + Substack issue + short-form video script</li>
+      <li>Use AI (Claude, ChatGPT) to accelerate format conversion from master blog post</li>
+      <li>Track which format drives most signups in GA4 UTM parameters</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Every new post repurposed in 5+ formats within 1 week</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>LinkedIn post reach: 5,000+ impressions per post</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Content</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-2"></span><span class="rating-pip pip-2"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Low–Med</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2+</span></td>
+  <td class="td-flag"><span class="flag flag-ongoing">Ongoing</span></td>
+</tr>
+
+<tr data-tier="futuristic" data-phase="q2" data-impact="3">
+  <td class="td-rank">35</td>
+  <td class="td-strategy">
+    <div class="strat-name">HubSpot + Salesforce Marketplace Listings</div>
+    <div class="strat-desc">HubSpot App Marketplace and Salesforce AppExchange provide enterprise credibility, co-marketing backlinks, and high-intent buyer discovery.</div>
+  </td>
+  <td><span class="tier-badge tier-f">Futuristic</span></td>
+  <td class="td-action">
+    <ul class="action-steps">
+      <li>Submit to HubSpot App Marketplace: polished listing, integration demo video, 5★ focus</li>
+      <li>Submit to Salesforce AppExchange (enterprise credibility signal)</li>
+      <li>Submit to Make.com (formerly Integromat) and n8n marketplaces</li>
+      <li>Each listing: deep integration depth with multiple triggers/actions</li>
+    </ul>
+  </td>
+  <td class="td-kpi">
+    <div class="kpi-item"><span class="kpi-icon">◎</span>All 4 marketplace listings live within 60 days</div>
+    <div class="kpi-item"><span class="kpi-icon">◎</span>Co-marketing backlinks from each partner's marketplace</div>
+  </td>
+  <td class="td-owner"><span class="owner-tag">Dev / Partnerships</span></td>
+  <td class="td-impact">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-effort">
+    <div class="rating-bar"><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-3"></span><span class="rating-pip pip-empty"></span><span class="rating-pip pip-empty"></span></div>
+    <div class="rating-label">Medium</div>
+  </td>
+  <td class="td-timeline"><span class="timeline-chip soon">Month 2–3</span></td>
+  <td class="td-flag"><span class="flag flag-q2">Month 2</span></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<!-- ── SUMMARY ── -->
+<div class="summary">
+  <div class="sum-cell">
+    <div class="sum-label">Quick Wins (Start Now)</div>
+    <div class="sum-val">10</div>
+    <div class="sum-sub">Actions completable in Week 1</div>
+  </div>
+  <div class="sum-cell">
+    <div class="sum-label">Month 1 Deliverables</div>
+    <div class="sum-val">5</div>
+    <div class="sum-sub">Spanish, schema, clusters, Shopify, freshness</div>
+  </div>
+  <div class="sum-cell">
+    <div class="sum-label">Month 2–3 Actions</div>
+    <div class="sum-val">20</div>
+    <div class="sum-sub">Hindi, PT, YouTube, tools, research, community</div>
+  </div>
+  <div class="sum-cell">
+    <div class="sum-label">Standard Tactics</div>
+    <div class="sum-val">12</div>
+    <div class="sum-sub">Core SEO must-haves</div>
+  </div>
+  <div class="sum-cell">
+    <div class="sum-label">Advanced Tactics</div>
+    <div class="sum-val">15</div>
+    <div class="sum-sub">Compounding advantage plays</div>
+  </div>
+  <div class="sum-cell">
+    <div class="sum-label">Futuristic Tactics</div>
+    <div class="sum-val">8</div>
+    <div class="sum-sub">First-mover 2026–27 plays</div>
+  </div>
+</div>
+
+<script>
+function filterRows(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const rows = document.querySelectorAll('#mainTable tbody tr[data-phase]');
+  rows.forEach(r => {
+    r.classList.remove('hidden');
+    if (type === 'all') return;
+    if (type === 'now' && r.dataset.phase !== 'now') r.classList.add('hidden');
+    if (type === 'q1' && r.dataset.phase !== 'q1') r.classList.add('hidden');
+    if (type === 'q2' && r.dataset.phase !== 'q2') r.classList.add('hidden');
+    if (type === 'high-impact' && parseInt(r.dataset.impact) < 4) r.classList.add('hidden');
+  });
+  // Hide phase headers if all rows in section are hidden
+  document.querySelectorAll('.phase-row').forEach(ph => ph.classList.remove('hidden'));
+}
+
+function filterTier(tier, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const rows = document.querySelectorAll('#mainTable tbody tr[data-tier]');
+  rows.forEach(r => {
+    r.classList.remove('hidden');
+    if (r.dataset.tier !== tier) r.classList.add('hidden');
+  });
+}
+
+function searchRows(query) {
+  const q = query.toLowerCase();
+  const rows = document.querySelectorAll('#mainTable tbody tr[data-phase]');
+  rows.forEach(r => {
+    const text = r.innerText.toLowerCase();
+    r.classList.toggle('hidden', q.length > 1 && !text.includes(q));
+  });
+}
+</script>
+</body>
+</html>
