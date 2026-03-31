@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BotPenguin — Full Organic SEO Playbook 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+  :root {
+    --bg: #050a12;
+    --surface: #0c1521;
+    --surface2: #111d2e;
+    --border: #1a2d45;
+    --accent: #00d4ff;
+    --accent2: #ff6b35;
+    --accent3: #7c3aed;
+    --accent4: #10b981;
+    --text: #e2eaf4;
+    --muted: #6b8aaa;
+    --gold: #f59e0b;
+    --danger: #ef4444;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: radial-gradient(ellipse 80% 60% at 50% -20%, #0d2d5e 0%, transparent 70%),
+                linear-gradient(180deg, #050a12 0%, #070f1c 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 59px, #0d2345 59px, #0d2345 60px),
+                repeating-linear-gradient(90deg, transparent, transparent 59px, #0d2345 59px, #0d2345 60px);
+    opacity:0.3;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #00d4ff22, #7c3aed22);
+    border: 1px solid #00d4ff44;
+    color: var(--accent);
+    font-size: 11px;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    max-width: 680px; margin: 0 auto 30px;
+    color: var(--muted);
+    font-size: 16px;
+  }
+  .hero-stats {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: center; position: relative;
+  }
+  .stat-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 10px 22px; border-radius: 30px;
+    font-size: 13px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .stat-pill b { color: var(--accent); font-size: 18px; font-family:'Syne',sans-serif; }
+
+  /* ── NAV ── */
+  .sticky-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #050a12ee;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex; gap: 0; overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .sticky-nav::-webkit-scrollbar { display:none; }
+  .nav-tab {
+    padding: 14px 20px;
+    font-size: 12px; font-family:'Syne',sans-serif;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer; white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  .section-header { margin-bottom: 40px; }
+  .section-label {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--accent); font-family:'Syne',sans-serif;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 700; line-height: 1.2;
+  }
+  .section-title span { color: var(--accent2); }
+  .section-sub { color: var(--muted); max-width: 620px; margin-top: 10px; }
+
+  /* ── TIER HEADER ── */
+  .tier-header {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 24px;
+    border-radius: 10px;
+    margin: 40px 0 24px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 18px;
+  }
+  .tier-header.t1 { background: linear-gradient(90deg, #00d4ff18, transparent); border-left: 3px solid var(--accent); }
+  .tier-header.t2 { background: linear-gradient(90deg, #ff6b3518, transparent); border-left: 3px solid var(--accent2); }
+  .tier-header.t3 { background: linear-gradient(90deg, #7c3aed18, transparent); border-left: 3px solid var(--accent3); }
+  .tier-badge {
+    padding: 4px 14px; border-radius: 20px;
+    font-size: 11px; letter-spacing: 1px;
+  }
+  .t1 .tier-badge { background: #00d4ff22; color: var(--accent); border: 1px solid #00d4ff44; }
+  .t2 .tier-badge { background: #ff6b3522; color: var(--accent2); border: 1px solid #ff6b3544; }
+  .t3 .tier-badge { background: #7c3aed22; color: #a78bfa; border: 1px solid #7c3aed44; }
+
+  /* ── STRATEGY CARDS ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    transition: border-color .2s, transform .2s;
+    position: relative; overflow: hidden;
+  }
+  .card:hover { border-color: #2a4060; transform: translateY(-2px); }
+  .card::before {
+    content: attr(data-num);
+    position: absolute; right: 20px; top: 16px;
+    font-family: 'Syne', sans-serif;
+    font-size: 36px; font-weight: 800;
+    color: var(--border); line-height: 1;
+    pointer-events: none;
+  }
+  .card-icon { font-size: 28px; margin-bottom: 12px; }
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px; font-weight: 700;
+    margin-bottom: 8px; line-height: 1.3;
+  }
+  .card-desc { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 14px; }
+  .card-action {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .card-action strong { color: var(--accent4); }
+  .card-meta {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 14px;
+  }
+  .tag {
+    font-size: 11px; padding: 3px 10px; border-radius: 12px;
+    font-family:'Syne',sans-serif; letter-spacing:.5px;
+  }
+  .tag.impact-high { background: #10b98120; color: #10b981; border: 1px solid #10b98130; }
+  .tag.impact-med { background: #f59e0b20; color: #f59e0b; border: 1px solid #f59e0b30; }
+  .tag.impact-low { background: #6b7280; color: #d1d5db; border:1px solid #6b728030; }
+  .tag.effort-low { background: #3b82f620; color: #60a5fa; border:1px solid #3b82f630; }
+  .tag.effort-med { background: #8b5cf620; color: #a78bfa; border:1px solid #8b5cf630; }
+  .tag.effort-high { background: #ef444420; color: #f87171; border:1px solid #ef444430; }
+  .tag.time { background: #0f172a; color: var(--muted); border:1px solid var(--border); }
+
+  /* ── PRIORITY TABLE ── */
+  .priority-table {
+    width: 100%; border-collapse: collapse;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .priority-table th {
+    background: var(--surface2);
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .priority-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13.5px; vertical-align: middle;
+  }
+  .priority-table tr:last-child td { border-bottom: none; }
+  .priority-table tr:hover td { background: #0d1a2b; }
+  .rank-num {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 14px;
+  }
+  .rank-1 { background: #f59e0b22; color: var(--gold); border:1px solid #f59e0b44; }
+  .rank-2 { background: #e5e7eb22; color: #d1d5db; border:1px solid #d1d5db44; }
+  .rank-3 { background: #b45309; color: #fbbf24; border:none; }
+  .rank-n { background: var(--surface2); color: var(--muted); border:1px solid var(--border); }
+  .stars { color: var(--gold); letter-spacing: 1px; font-size: 12px; }
+  .stars-med { color: #f59e0b88; }
+
+  /* ── IMPACT BAR ── */
+  .impact-bar-wrap { display:flex; align-items:center; gap:10px; }
+  .impact-bar {
+    height: 6px; border-radius: 4px;
+    background: var(--surface2);
+    width: 100px; flex-shrink: 0;
+  }
+  .impact-bar-fill { height:100%; border-radius:4px; }
+
+  /* ── COMPETITOR GRID ── */
+  .comp-table { width:100%; border-collapse:collapse; }
+  .comp-table th {
+    padding: 12px 14px; text-align:left;
+    font-family:'Syne',sans-serif; font-size:11px; letter-spacing:1.5px;
+    text-transform:uppercase; color:var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .comp-table td { padding:12px 14px; border-bottom:1px solid #0f1e30; font-size:13px; }
+  .comp-table tr:last-child td { border-bottom:none; }
+  .comp-table tr:hover td { background:#0a1625; }
+  .check { color: var(--accent4); font-size:16px; }
+  .cross { color: var(--danger); font-size:16px; }
+  .partial { color: var(--gold); font-size:16px; }
+  .bp-name { font-family:'Syne',sans-serif; font-weight:700; color:var(--accent); }
+
+  /* ── OPPORTUNITY MAP ── */
+  .opp-map {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .opp-cell {
+    padding: 14px 12px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    cursor: default;
+    transition: transform .15s;
+  }
+  .opp-cell:hover { transform: scale(1.03); }
+  .opp-cell .opp-icon { font-size: 22px; margin-bottom:6px; }
+  .opp-cell .opp-name { font-family:'Syne',sans-serif; font-weight:600; font-size:11px; line-height:1.3; }
+  .opp-cell.fire { background: #ff6b3510; border-color: #ff6b3530; }
+  .opp-cell.high { background: #f59e0b08; border-color: #f59e0b20; }
+  .opp-cell.med { background: #10b98108; border-color: #10b98120; }
+  .opp-cell.low { background: #3b82f608; border-color: #3b82f620; }
+
+  /* ── GOOGLE UPDATE ALERT ── */
+  .alert-box {
+    background: linear-gradient(135deg, #1a0d00, #1f1505);
+    border: 1px solid #f59e0b44;
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 0 0 32px;
+  }
+  .alert-box h4 {
+    font-family:'Syne',sans-serif;
+    color: var(--gold); margin-bottom: 8px;
+    font-size: 15px;
+  }
+  .alert-box p { color: #c4a55a; font-size: 13.5px; }
+
+  /* ── TIMELINE ── */
+  .timeline { position:relative; padding-left: 30px; }
+  .timeline::before {
+    content:''; position:absolute; left:10px; top:4px; bottom:4px;
+    width:2px; background: linear-gradient(180deg, var(--accent), var(--accent3), transparent);
+  }
+  .timeline-item { position:relative; margin-bottom: 28px; }
+  .timeline-dot {
+    position:absolute; left:-26px; top:4px;
+    width:14px; height:14px; border-radius:50%;
+    border:2px solid var(--surface);
+  }
+  .timeline-dot.t1c { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+  .timeline-dot.t2c { background: var(--accent2); box-shadow: 0 0 8px var(--accent2); }
+  .timeline-dot.t3c { background: var(--accent3); box-shadow: 0 0 8px var(--accent3); }
+  .timeline-label {
+    font-size:11px; font-family:'Syne',sans-serif; letter-spacing:1px;
+    text-transform:uppercase; color:var(--muted); margin-bottom:4px;
+  }
+  .timeline-title {
+    font-family:'Syne',sans-serif; font-weight:700; font-size:15px; margin-bottom:6px;
+  }
+  .timeline-desc { color:var(--muted); font-size:13px; }
+
+  /* ── LEAD FUNNEL ── */
+  .funnel {
+    display:flex; flex-direction:column; gap:8px;
+    max-width: 600px; margin:0 auto;
+  }
+  .funnel-step {
+    display:flex; align-items:center; gap:16px;
+    padding: 16px 20px;
+    border-radius:10px; border:1px solid var(--border);
+    background: var(--surface);
+    transition: border-color .2s;
+  }
+  .funnel-step:hover { border-color:#2a4060; }
+  .funnel-step-icon { font-size:22px; flex-shrink:0; }
+  .funnel-step-text strong { font-family:'Syne',sans-serif; font-size:14px; display:block; margin-bottom:2px; }
+  .funnel-step-text span { color:var(--muted); font-size:12.5px; }
+  .funnel-arrow { text-align:center; color:var(--muted); font-size:18px; }
+
+  /* ── FUTURISTIC IDEAS ── */
+  .future-card {
+    background: linear-gradient(135deg, #12002a, #0a0020);
+    border: 1px solid #7c3aed44;
+    border-radius:14px; padding:22px 24px;
+    position:relative; overflow:hidden;
+  }
+  .future-card::after {
+    content:''; position:absolute; right:-30px; top:-30px;
+    width:120px; height:120px; border-radius:50%;
+    background: radial-gradient(circle, #7c3aed22, transparent 70%);
+  }
+  .future-card h4 {
+    font-family:'Syne',sans-serif; font-size:15px; font-weight:700;
+    color:#c4b5fd; margin-bottom:8px; position:relative;
+  }
+  .future-card p { color:#8b7aa8; font-size:13.5px; position:relative; }
+  .future-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap:16px; }
+
+  /* ── QUICK WINS ── */
+  .quick-wins {
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+    gap:16px;
+  }
+  .qw-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius:12px; padding:18px;
+    display:flex; gap:14px; align-items:flex-start;
+  }
+  .qw-icon {
+    width:40px; height:40px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:20px; flex-shrink:0;
+  }
+  .qw-icon.g { background:#10b98120; }
+  .qw-icon.b { background:#3b82f620; }
+  .qw-icon.y { background:#f59e0b20; }
+  .qw-icon.r { background:#ef444420; }
+  .qw-card h5 { font-family:'Syne',sans-serif; font-size:13px; font-weight:700; margin-bottom:4px; }
+  .qw-card p { color:var(--muted); font-size:12px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align:center; padding:40px 24px;
+    color:var(--muted); font-size:12.5px;
+    border-top:1px solid var(--border);
+  }
+  .footer strong { color:var(--text); }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:768px){
+    .hero { padding:40px 20px 36px; }
+    .opp-map { grid-template-columns: repeat(3,1fr); }
+    .cards-grid { grid-template-columns: 1fr; }
+    .sticky-nav { padding:0 12px; }
+    .priority-table th:nth-child(4), .priority-table td:nth-child(4),
+    .priority-table th:nth-child(5), .priority-table td:nth-child(5) { display:none; }
+  }
+
+  /* ── SCROLL ANIMATION ── */
+  .fade-in { opacity:0; transform:translateY(20px); transition: opacity .5s, transform .5s; }
+  .fade-in.visible { opacity:1; transform:none; }
+
+  /* ── TOOLTIP ── */
+  [data-tip] { position:relative; cursor:help; border-bottom:1px dashed var(--border); }
+  [data-tip]:hover::after {
+    content:attr(data-tip);
+    position:absolute; bottom:100%; left:50%; transform:translateX(-50%);
+    background:#1a2d45; border:1px solid var(--border);
+    color:var(--text); font-size:12px; padding:6px 12px;
+    border-radius:6px; white-space:nowrap; z-index:99;
+    margin-bottom:6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="hero">
+  <div class="hero-badge">🐧 BotPenguin · Organic SEO Master Playbook · 2026</div>
+  <h1>Every Organic Promotion Strategy<br><span>BotPenguin Must Execute in 2026</span></h1>
+  <p>From quick wins to futuristic plays — structured by tier, backed by competitor gaps, aligned with Google's March 2026 core update &amp; the GEO revolution.</p>
+  <div class="hero-stats">
+    <div class="stat-pill"><b>35+</b> Organic Strategies</div>
+    <div class="stat-pill"><b>8</b> Competitors Analyzed</div>
+    <div class="stat-pill"><b>3</b> Tiers: Standard → Advanced → Futuristic</div>
+    <div class="stat-pill"><b>100%</b> Actionable</div>
+  </div>
+</div>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="sticky-nav">
+  <div class="nav-tab active" onclick="scrollTo('updates')">⚡ Google Updates</div>
+  <div class="nav-tab" onclick="scrollTo('standard')">📗 Standard SEO</div>
+  <div class="nav-tab" onclick="scrollTo('advanced')">🔷 Advanced SEO</div>
+  <div class="nav-tab" onclick="scrollTo('futuristic')">🚀 Futuristic SEO</div>
+  <div class="nav-tab" onclick="scrollTo('gaps')">🎯 Competitor Gaps</div>
+  <div class="nav-tab" onclick="scrollTo('funnel')">💡 Lead Funnel</div>
+  <div class="nav-tab" onclick="scrollTo('priority')">📊 Priority Matrix</div>
+  <div class="nav-tab" onclick="scrollTo('quickwins')">⚡ Quick Wins</div>
+</nav>
+
+<div class="container">
+
+<!-- ═══════════════ GOOGLE UPDATES ═══════════════ -->
+<section class="section" id="updates">
+  <div class="section-header">
+    <div class="section-label">Latest · March 2026</div>
+    <h2 class="section-title">What Google Just Changed — <span>And What It Means for BotPenguin</span></h2>
+    <p class="section-sub">The March 27, 2026 Core Update + February Discover Update. Your strategy must adapt immediately.</p>
+  </div>
+
+  <div class="alert-box">
+    <h4>⚠️ March 27, 2026 Core Update — Live Now (rolling out ~2 weeks)</h4>
+    <p>Google confirmed a broad core update focusing on relevance, user satisfaction, E-E-A-T depth, and experience-driven content. Sites with thin AI-generated content are dropping. Original, structured, expert-authored content is rising. This directly validates 80% of the strategies in this playbook.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card" data-num="1">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">E-E-A-T is Now Non-Negotiable</div>
+      <div class="card-desc">Experience, Expertise, Authoritativeness, Trustworthiness. Every BotPenguin article needs verified author bios, credentials, and first-hand examples.</div>
+      <div class="card-action"><strong>Action:</strong> Add expert author schema + bio pages to all content. Link authors' LinkedIn profiles.</div>
+    </div>
+    <div class="card" data-num="2">
+      <div class="card-icon">🔍</div>
+      <div class="card-title">Intent Over Keywords</div>
+      <div class="card-desc">Google now rewards content that truly satisfies searcher intent — not keyword repetition. Stop targeting "chatbot software" alone; solve the question behind the search.</div>
+      <div class="card-action"><strong>Action:</strong> Map every page to a specific buyer intent (Awareness / Comparison / Decision).</div>
+    </div>
+    <div class="card" data-num="3">
+      <div class="card-icon">📰</div>
+      <div class="card-title">February Discover Update: Local + Original</div>
+      <div class="card-desc">Google Discover now rewards locally relevant, sensational-free, in-depth content from topically authoritative domains. This affects your blog reach massively.</div>
+      <div class="card-action"><strong>Action:</strong> Create region-specific content (India chatbot, LATAM WhatsApp, etc.) with local market data.</div>
+    </div>
+    <div class="card" data-num="4">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">AI Overviews Suppress Clicks by 34.5%</div>
+      <div class="card-desc">When Google shows AI Overviews for a query, clicks to regular results drop ~34.5%. But being cited inside AI Overviews drives massive brand authority and trust.</div>
+      <div class="card-action"><strong>Action:</strong> Structure every major page with a 40–60 word direct answer at the top for AI extraction.</div>
+    </div>
+    <div class="card" data-num="5">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">GEO is the New SEO (GEO = Generative Engine Optimization)</div>
+      <div class="card-desc">Being cited by ChatGPT, Perplexity, and Google AI Overviews is now as important as ranking #1. AI search visitors convert 4.4× better in B2B contexts.</div>
+      <div class="card-action"><strong>Action:</strong> Implement llms.txt, allow AI bots in robots.txt, add statistics + citations to all pages.</div>
+    </div>
+    <div class="card" data-num="6">
+      <div class="card-icon">🧩</div>
+      <div class="card-title">Schema Markup Directly Feeds AI Systems</div>
+      <div class="card-desc">Bing confirmed schema helps LLMs understand content. Google uses it for rich results AND AI answer generation. Most BotPenguin pages lack comprehensive schema.</div>
+      <div class="card-action"><strong>Action:</strong> Deploy WebApp, FAQ, HowTo, Organization, AggregateRating, VideoObject schema immediately.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STANDARD SEO ═══════════════ -->
+<section class="section" id="standard">
+  <div class="section-header">
+    <div class="section-label">Tier 1 · Foundation</div>
+    <h2 class="section-title">Standard Organic Promotion — <span>Must-Have Executions</span></h2>
+    <p class="section-sub">Every established SEO tactic that BotPenguin is missing or underexecuting vs competitors. Start here before anything else.</p>
+  </div>
+
+  <div class="tier-header t1">
+    <span class="tier-badge">TIER 1</span>
+    📗 Standard SEO — Core Tactics Every SaaS Must Own
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card" data-num="01">
+      <div class="card-icon">🌍</div>
+      <div class="card-title">Multilingual SEO — Spanish, Portuguese, Hindi</div>
+      <div class="card-desc">BotPenguin serves 193 countries but the site is English-only. Hindi has zero chatbot SaaS competition. Brazil has 148M WhatsApp users. This is the biggest single opportunity available.</div>
+      <div class="card-action"><strong>Action:</strong> Build /es/ /pt/ /hi/ /fr/ /ar/ subdirectories. Translate top 20 pages first. Implement hreflang tags carefully (75% of implementations have errors).</div>
+      <div class="card-meta">
+        <span class="tag impact-high">★ Highest Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 3–6 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="02">
+      <div class="card-icon">📝</div>
+      <div class="card-title">Topical Authority Cluster Building</div>
+      <div class="card-desc">Create deep topic clusters (pillar + 10 supporting pages) around "WhatsApp Chatbots," "AI Customer Support," and "Lead Generation Bots." Google's March 2026 update rewards topical depth over broad shallow coverage.</div>
+      <div class="card-action"><strong>Action:</strong> Map 5 core pillar topics → 50 supporting article targets → build internal link architecture connecting each cluster.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 2–4 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="03">
+      <div class="card-icon">⭐</div>
+      <div class="card-title">Reputation SEO — Review Platform Emergency</div>
+      <div class="card-desc">3.3 stars on Sitejabber from 8 reviews is actively killing conversions. Tidio has hundreds of G2 reviews. BotPenguin has 6. This appears in branded searches and AI answer sources.</div>
+      <div class="card-action"><strong>Action:</strong> Launch systematic review campaign: G2, Capterra, Trustpilot, TrustRadius, GetApp. Respond professionally to all negative reviews. Upgrade G2 plan.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ 1–3 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="04">
+      <div class="card-icon">🏪</div>
+      <div class="card-title">Integration Marketplace Listings</div>
+      <div class="card-desc">Tidio has 30,505 active Shopify installs. BotPenguin has no native Shopify App Store listing. WordPress, HubSpot App Marketplace, Salesforce AppExchange are all untapped channels.</div>
+      <div class="card-action"><strong>Action:</strong> Publish native Shopify listing (free tier is the hook). Expand Zapier triggers/actions. List on HubSpot Marketplace. Collect app-store reviews aggressively.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 2–4 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="05">
+      <div class="card-icon">🎯</div>
+      <div class="card-title">Third-Party Listicle Placement</div>
+      <div class="card-desc">BotPenguin appears in ZERO "best chatbot builder" listicles that AI models use as category maps. Zapier, G2, Appy Pie, Chatimize, Emergent.sh — all exclude BotPenguin.</div>
+      <div class="card-action"><strong>Action:</strong> Create outreach list of top 30 "best chatbot" articles. Pitch inclusion with free accounts, comparison data, and media kits. Track monthly.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ 1–2 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="06">
+      <div class="card-icon">🏗️</div>
+      <div class="card-title">Technical SEO Foundation Audit</div>
+      <div class="card-desc">Core Web Vitals, crawlability, canonical issues, robots.txt, sitemap accuracy, and internal linking gaps. The March 2026 update explicitly penalizes technical debt.</div>
+      <div class="card-action"><strong>Action:</strong> Run full Screaming Frog crawl. Fix 404s, redirect chains, duplicate content. Ensure all pages are indexed in GSC. Validate Core Web Vitals on mobile.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ 2–4 weeks</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="07">
+      <div class="card-icon">🔗</div>
+      <div class="card-title">Link Building — Broken Link + Digital PR</div>
+      <div class="card-desc">Find broken links on chatbot/SaaS blogs and offer BotPenguin pages as replacements. 48.6% of SEOs call digital PR the most effective link tactic. BotPenguin has zero data assets to attract links.</div>
+      <div class="card-action"><strong>Action:</strong> Register on Connectively/HARO. Mine Ahrefs for broken competitor backlinks. Create a "Chatbot Statistics 2026" page using BotPenguin platform data as link bait.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 3–5 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="08">
+      <div class="card-icon">💬</div>
+      <div class="card-title">Blog Cadence + Content Calendar</div>
+      <div class="card-desc">Companies publishing 15+ blog posts/month generate ~1,200 new monthly leads. BotPenguin needs a consistent, intent-mapped content calendar covering TOFU, MOFU, and BOFU keywords.</div>
+      <div class="card-action"><strong>Action:</strong> Build 3-month editorial calendar. Target 15 posts/month. Prioritize decision-stage and comparison content first (highest conversion intent).</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ Ongoing</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="09">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Programmatic SEO Expansion</div>
+      <div class="card-desc">BotPenguin has 60+ templated pages. Competitors like Crisp run 25+ alternative pages. Expand to all 80+ integrations, 30+ industries, and "[Competitor] pricing 2026" pages.</div>
+      <div class="card-action"><strong>Action:</strong> Create "chatbot for [integration]" pages for all 80+ integrations. Add every industry vertical. Build third-party comparison pages ("Tidio vs Crisp" — recommending BotPenguin).</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 2–4 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="10">
+      <div class="card-icon">🏢</div>
+      <div class="card-title">Google Business Profile + Local SEO</div>
+      <div class="card-desc">Optimize GBP for enterprise sales teams searching locally. BotPenguin is India-based — Hindi content + local SEO can dominate India's $316.5M chatbot market with near-zero competition.</div>
+      <div class="card-action"><strong>Action:</strong> Claim and fully optimize Google Business Profile. Add location schema. Create city-specific landing pages for major Indian metros.</div>
+      <div class="card-meta">
+        <span class="tag impact-med">Medium Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ 2–4 weeks</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ ADVANCED SEO ═══════════════ -->
+<section class="section" id="advanced">
+  <div class="section-header">
+    <div class="section-label">Tier 2 · Advanced</div>
+    <h2 class="section-title">Advanced Organic Strategies — <span>Where Leaders Separate From Followers</span></h2>
+    <p class="section-sub">Tactics that require coordination, data, and long-term investment — but deliver compounding, defensible organic advantages.</p>
+  </div>
+
+  <div class="tier-header t2">
+    <span class="tier-badge">TIER 2</span>
+    🔷 Advanced SEO — Compounding Advantage Tactics
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card" data-num="11">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">GEO — Generative Engine Optimization</div>
+      <div class="card-desc">BotPenguin is absent from ChatGPT, Perplexity, and Google AI Overviews. GEO visitors convert 4.4× better than organic in B2B. Web mentions outperform backlinks 3:1 for AI visibility.</div>
+      <div class="card-action"><strong>Action:</strong> Add 40–60 word "answer-first" paragraphs to all pages. Create llms.txt file. Allow GPTBot, ClaudeBot, PerplexityBot in robots.txt. Add statistics + expert citations to content.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">★ Highest Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 3–6 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="12">
+      <div class="card-icon">🎙️</div>
+      <div class="card-title">Reddit + Forum SEO — Zero BotPenguin Presence</div>
+      <div class="card-desc">Searching "BotPenguin reddit" returns zero results. Reddit DA 91 ranks threads within 24–48 hours. LLMs actively pull Reddit for SaaS recommendations. This is the fastest-to-execute high-impact gap.</div>
+      <div class="card-action"><strong>Action:</strong> Build karma in r/chatbots, r/SaaS, r/ecommerce over 4–6 weeks. Host a founder AMA in r/SaaS. Answer Quora top 20 chatbot questions with full, helpful answers.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ 1–3 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="13">
+      <div class="card-icon">🧩</div>
+      <div class="card-title">Advanced Schema Markup Suite</div>
+      <div class="card-desc">Less than 1/3 of SaaS sites use schema correctly. Bing uses schema to feed LLMs. BotPenguin gains immediate SERP rich results + AI parsing advantages with a full schema deployment.</div>
+      <div class="card-action"><strong>Action:</strong> Deploy WebApplication, Organization, FAQPage, HowTo, AggregateRating, Product, VideoObject, BreadcrumbList schema. Validate with Google Rich Results Test monthly.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ 1–2 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="14">
+      <div class="card-icon">🛠️</div>
+      <div class="card-title">Free Tool Suite — No Competitor Has This</div>
+      <div class="card-desc">None of BotPenguin's 8 competitors offer free calculator or tool pages. HubSpot's Website Grader earned 300+ referring domains. SiteGPT's tool suite proves chatbot tools generate organic leads at scale.</div>
+      <div class="card-action"><strong>Action:</strong> Build: WhatsApp API cost calculator, chatbot vs. human cost comparison tool, AI readiness quiz, response time benchmark, customer savings estimator. Host at /tools/ hub.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 2–4 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="15">
+      <div class="card-icon">🎬</div>
+      <div class="card-title">YouTube Tutorial SEO — Dual-Platform Ranking</div>
+      <div class="card-desc">BotPenguin has no YouTube tutorial presence. Botpress posts daily and dominates video carousels. Videos rank simultaneously on YouTube and Google. VideoObject schema puts you in video rich snippets.</div>
+      <div class="card-action"><strong>Action:</strong> 1 video/week: "How to build a WhatsApp chatbot," integration tutorials, vs. comparison videos. Add full transcripts, chapters (for Google Key Moments), and VideoObject schema on corresponding blog posts.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-high">High Effort</span>
+        <span class="tag time">⏱ 3–6 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="16">
+      <div class="card-icon">📚</div>
+      <div class="card-title">Original Research + Data Studies</div>
+      <div class="card-desc">Tidio's "80+ Chatbot Statistics" page earns hundreds of backlinks constantly. BotPenguin publishes zero original research. Digital PR earns 3–5× more high-authority links than outreach alone.</div>
+      <div class="card-action"><strong>Action:</strong> Commission "State of AI Chatbot Adoption 2026" (500+ business survey). Publish Chatbot Statistics page using BotPenguin platform data. Newsjack AI announcements within 24 hours.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-high">Medium-High Effort</span>
+        <span class="tag time">⏱ 3–6 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="17">
+      <div class="card-icon">🏷️</div>
+      <div class="card-title">Entity SEO + Wikidata / Knowledge Graph</div>
+      <div class="card-desc">Only Intercom has a Wikipedia page and Knowledge Panel. Wikidata entry takes 1–2 hours of work and is MORE critical than Wikipedia for Google Knowledge Panel. Playing field is nearly level.</div>
+      <div class="card-action"><strong>Action:</strong> Create Wikidata entry. Build author entities for founders. Optimize Crunchbase, LinkedIn, AngelList. Add Organization schema with sameAs properties linking all profiles.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">Medium-High Impact</span>
+        <span class="tag effort-low">Low-Medium Effort</span>
+        <span class="tag time">⏱ 2–6 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="18">
+      <div class="card-icon">🤝</div>
+      <div class="card-title">Partner Ecosystem SEO + Co-Marketing Content</div>
+      <div class="card-desc">Intercom's HubSpot partnership includes co-branded landing pages. Drift's tiered partner directory drove Accenture to create content ranking for "Drift chatbot agency." BotPenguin has the infrastructure — not the content engine.</div>
+      <div class="card-action"><strong>Action:</strong> Create co-branded landing pages with HubSpot, Shopify, Salesforce. Launch agency certification with content requirements. Build public SEO-optimized partner directory.</div>
+      <div class="card-meta">
+        <span class="tag impact-med">Medium Impact</span>
+        <span class="tag effort-high">Medium-High Effort</span>
+        <span class="tag time">⏱ 3–6 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="19">
+      <div class="card-icon">🎧</div>
+      <div class="card-title">Podcast SEO — Vacant Competitive Niche</div>
+      <div class="card-desc">Zero BotPenguin competitors have a branded podcast except the acquired Drift. Drift's "Seeking Wisdom" reached Top 5 iTunes Business with 500K downloads Year 1. Each episode generates 6 SEO assets.</div>
+      <div class="card-action"><strong>Action:</strong> Launch branded podcast on AI chatbot industry insights (not product promo). Simultaneously pitch BotPenguin founders to SaaStr, SaaS Revolution Show, Scale or Die for immediate DA 70+ backlinks.</div>
+      <div class="card-meta">
+        <span class="tag impact-med">Medium Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 3–6 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="20">
+      <div class="card-icon">📣</div>
+      <div class="card-title">Content Repurposing Engine</div>
+      <div class="card-desc">Each piece of content should live in 7+ formats: blog → YouTube → LinkedIn article → Twitter thread → email newsletter → podcast → infographic. Maximize ROI from every research or writing investment.</div>
+      <div class="card-action"><strong>Action:</strong> Build a repurposing workflow: every new blog post auto-spawns LinkedIn post, Twitter thread, YouTube outline, and newsletter teaser. Use AI to accelerate format conversion.</div>
+      <div class="card-meta">
+        <span class="tag impact-med">Medium Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ Ongoing</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="21">
+      <div class="card-icon">🌐</div>
+      <div class="card-title">Substack SEO Publication</div>
+      <div class="card-desc">Substack content is fully indexed by Google and ranks in top 10 for 18%+ of brand-name searches per Ahrefs. A BotPenguin Substack on "AI in Customer Support" builds brand mentions and authority simultaneously.</div>
+      <div class="card-action"><strong>Action:</strong> Launch "The Chatbot Chronicle" on Substack. Weekly deep-dives on AI customer support trends. Cross-link to BotPenguin features. Build subscriber base organically through LinkedIn promotion.</div>
+      <div class="card-meta">
+        <span class="tag impact-med">Medium Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ 2–4 months</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="22">
+      <div class="card-icon">🔄</div>
+      <div class="card-title">Content Freshness + Decay Prevention</div>
+      <div class="card-desc">LLM citations decay within 1–2 months. Citation sources change 40–60% month-to-month. Google's March 2026 update surfaced original, timely content. Stale content loses rankings and AI citations rapidly.</div>
+      <div class="card-action"><strong>Action:</strong> Schedule quarterly refresh for all top-50 traffic pages. Add "Last updated [date]" prominently. Refresh statistics, add new data, and expand examples in each update cycle.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ Ongoing</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="23">
+      <div class="card-icon">📍</div>
+      <div class="card-title">Bing SEO Optimization</div>
+      <div class="card-desc">ChatGPT relies heavily on Bing for web access. If BotPenguin isn't indexed and ranking in Bing, it won't appear in ChatGPT results. BotPenguin's Bing SEO is likely severely deprioritized.</div>
+      <div class="card-action"><strong>Action:</strong> Set up Bing Webmaster Tools. Submit XML sitemap. Verify all pages are indexed. Optimize for Bing's specific ranking factors (older domain authority, direct backlinks, social signals).</div>
+      <div class="card-meta">
+        <span class="tag impact-high">High Impact</span>
+        <span class="tag effort-low">Low Effort</span>
+        <span class="tag time">⏱ 2–4 weeks</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="24">
+      <div class="card-icon">🏆</div>
+      <div class="card-title">Product Hunt + Launch Platforms</div>
+      <div class="card-desc">BotPenguin's Product Hunt shows 2 reviews and 4 followers — a completely neglected launch platform. A well-executed Product Hunt launch drives thousands of visits, backlinks, and brand mentions in 24 hours.</div>
+      <div class="card-action"><strong>Action:</strong> Plan a major re-launch of BotPenguin's newest feature on Product Hunt. Mobilize user community for launch day upvotes. Prepare media kit, demo video, and pricing clarity.</div>
+      <div class="card-meta">
+        <span class="tag impact-med">Medium Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 4–6 weeks prep</span>
+      </div>
+    </div>
+
+    <div class="card" data-num="25">
+      <div class="card-icon">👥</div>
+      <div class="card-title">Branded Community (Discord / Forum)</div>
+      <div class="card-desc">Botpress has 30,000+ member Discord with daily AMAs — all indexed content. Tally saw ChatGPT become its #1 referral source (125K visits/month) largely due to community-generated content.</div>
+      <div class="card-action"><strong>Action:</strong> Launch BotPenguin Discord server. Create channels for templates, integrations, use-cases, troubleshooting. Host weekly AMAs. Every indexed thread becomes an SEO asset feeding AI engines.</div>
+      <div class="card-meta">
+        <span class="tag impact-high">Medium-High Impact</span>
+        <span class="tag effort-med">Medium Effort</span>
+        <span class="tag time">⏱ 3–6 months</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ FUTURISTIC SEO ═══════════════ -->
+<section class="section" id="futuristic">
+  <div class="section-header">
+    <div class="section-label">Tier 3 · Futuristic</div>
+    <h2 class="section-title">Futuristic SEO — <span>2026–2027 First-Mover Plays</span></h2>
+    <p class="section-sub">Emerging tactics that almost no SaaS companies are executing yet. Early adopters will dominate these channels as they mature.</p>
+  </div>
+
+  <div class="tier-header t3">
+    <span class="tier-badge">TIER 3</span>
+    🚀 Futuristic SEO — First-Mover Advantage Territory
+  </div>
+
+  <div class="future-grid">
+
+    <div class="future-card">
+      <h4>🤖 AI Agent SEO (Search Agents as Traffic Sources)</h4>
+      <p>AI agents (like OpenAI's Operator, Google's Agentic Mode) now autonomously browse, compare tools, and make purchase recommendations. Optimize product pages for agent-parsable structured data — not just humans. Agents prefer clean JSON-LD, demo-accessible pages, and clear pricing schemas that machines can evaluate without human prompting.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>📋 llms.txt + robots.txt AI Crawler Management</h4>
+      <p>A new emerging standard — the llms.txt file — lets AI systems understand your site structure like sitemap.xml does for search engines. Creating this file today puts BotPenguin ahead of 99% of chatbot SaaS brands. Simultaneously, whitelist GPTBot, ClaudeBot, PerplexityBot, and anthropic-ai in robots.txt to ensure AI training and retrieval access.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>🎙️ Voice Search + Conversational Query Optimization</h4>
+      <p>Voice search via AI assistants (Siri, Google Assistant, Alexa, ChatGPT Voice) uses conversational phrases. Optimize content for "People Also Ask" patterns and natural question formats. Structure FAQ content exactly matching how someone would speak a question — not how they'd type it. This is the fastest-growing untapped search channel in LATAM and India.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>📊 AI Citation Tracking & Share of Voice in LLMs</h4>
+      <p>Track how often BotPenguin is cited vs. competitors in ChatGPT, Perplexity, Gemini, and Claude responses. Tools like Semrush Enterprise AIO, Profound, and Authoritas now measure AI citation share. Monthly audits querying AI engines for 20+ target keywords reveal exactly where BotPenguin is invisible — and which pages need optimization.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>🌐 Topical Web (Semantic Clusters for AI Training)</h4>
+      <p>AI models are trained on and retrieve from sites with dense, linked, authoritative topical webs. Build an interconnected semantic cluster where every piece of BotPenguin content cites and links to other BotPenguin content — creating a "knowledge graph" effect that signals deep expertise to both Google and LLMs. Aim for 50+ internally linked articles per topic cluster.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>🔬 Zero-Click Search Optimization (Featured Snippets + PAA)</h4>
+      <p>69% of searches ended without a click in 2025. Own the zero-click SERP by capturing Featured Snippets and every "People Also Ask" box for chatbot-related queries. Structure content as direct questions and 40-60 word answers. Q&A format pages with FAQPage schema systematically capture PAA boxes — and also get cited in AI Overviews.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>🎮 Interactive Content SEO (Quizzes, Assessments, Simulators)</h4>
+      <p>Interactive tools generate 2× more conversions than passive content and earn backlinks organically. Build a "Which chatbot platform is right for your business?" quiz, a WhatsApp bot simulator, and an AI agent use-case builder. Interactive content also signals engagement quality to Google's March 2026 update systems that measure session depth and satisfaction.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>📱 Short-Form Video SEO (TikTok + Instagram Reels + YouTube Shorts)</h4>
+      <p>Google now indexes and surfaces TikTok and Instagram Reels content in search results. Search for "how to create a chatbot" already shows short-form video carousels. BotPenguin has no short-form presence. 60-second "Chatbot trick of the day" or "WhatsApp automation hack" shorts can rank in Google AND drive discovery via platform algorithms simultaneously.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>🌍 Google Discover Optimization</h4>
+      <p>The February 2026 Discover update now surfaces locally relevant, expert, original content. Discover can drive millions of impressions with zero search intent required — pure topical interest discovery. Optimize for Discover by publishing timely, image-rich, expert-authored articles with strong E-E-A-T signals. Add Discover-specific open graph tags and high-quality hero images (1200px+).</p>
+    </div>
+
+    <div class="future-card">
+      <h4>🧬 Brand Mention Graph Building (Unlinked Citations)</h4>
+      <p>Web mentions now outperform backlinks 3:1 for AI Overview presence. Unlinked brand mentions on high-authority sites (niche DR 30 blogs) can beat linked mentions on DR 90 sites for AI citation. Build a "mention velocity" campaign: get BotPenguin mentioned across Reddit, Quora, Medium, Dev.to, Indie Hackers, HackerNews, and niche SaaS blogs — even without hyperlinks.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>🤝 AI Training Data Partnerships</h4>
+      <p>Some AI companies partner with SaaS brands to use their documentation and blog content as training data (with attribution agreements). Early partnerships with emerging AI search engines ensure BotPenguin is built into their knowledge bases. This is a frontier tactic — but brands who do it in 2026 will have structural AI citation advantages for years.</p>
+    </div>
+
+    <div class="future-card">
+      <h4>📡 Podcast Guesting as Link + Citation Strategy</h4>
+      <p>A mid-sized B2B SaaS that booked 12 podcast guest spots in 6 months earned 18 high-authority DA 70+ backlinks through show notes alone. Google now scans audio for relevance. Get BotPenguin founders on SaaStr, The SaaS Revolution Show, Chatbots Life, and Marketing Over Coffee — each appearance generates a forever-indexed backlink and brand mention.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ COMPETITOR GAP ANALYSIS ═══════════════ -->
+<section class="section" id="gaps">
+  <div class="section-header">
+    <div class="section-label">Competitive Intelligence</div>
+    <h2 class="section-title">Competitor Gap Matrix — <span>Who Does What (And Who Doesn't)</span></h2>
+    <p class="section-sub">Where BotPenguin is behind, level, or ahead vs. 8 direct competitors across all organic channels.</p>
+  </div>
+
+  <div style="overflow-x:auto; border-radius:12px; border:1px solid var(--border);">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Channel / Tactic</th>
+          <th>BotPenguin</th>
+          <th>Tidio</th>
+          <th>Intercom</th>
+          <th>ManyChat</th>
+          <th>Chatfuel</th>
+          <th>Crisp</th>
+          <th>Landbot</th>
+          <th>Freshchat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Multilingual Website</b></td><td class="bp-name">✗ English Only</td><td><span class="cross">✗</span></td><td><span class="partial">~</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓ FR</span></td><td><span class="check">✓ ES</span></td><td><span class="cross">✗</span></td></tr>
+        <tr><td><b>Reddit Presence</b></td><td class="bp-name">✗ Zero</td><td><span class="cross">✗</span></td><td><span class="partial">~</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+        <tr><td><b>Free Tool Suite</b></td><td class="bp-name">✓ ROI Calc only</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+        <tr><td><b>Wikipedia Page</b></td><td class="bp-name">✗ None</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="partial">~ (Freshworks)</span></td></tr>
+        <tr><td><b>Original Research / Stats</b></td><td class="bp-name">✗ None</td><td><span class="check">✓ 80+ Stats</span></td><td><span class="check">✓</span></td><td><span class="partial">~</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+        <tr><td><b>YouTube Tutorial Channel</b></td><td class="bp-name">✗ None</td><td><span class="partial">~</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="partial">~</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="partial">~</span></td></tr>
+        <tr><td><b>Branded Podcast</b></td><td class="bp-name">✗ None</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+        <tr><td><b>Shopify App Listing</b></td><td class="bp-name">✗ Not listed</td><td><span class="check">✓ 30K+ installs</span></td><td><span class="partial">~</span></td><td><span class="partial">~</span></td><td><span class="partial">~</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+        <tr><td><b>G2 Reviews (Volume)</b></td><td class="bp-name">~6 reviews</td><td><span class="check">✓ Hundreds</span></td><td><span class="check">✓ Thousands</span></td><td><span class="check">✓ Hundreds</span></td><td><span class="check">✓ 100+</span></td><td><span class="partial">~</span></td><td><span class="partial">~</span></td><td><span class="check">✓ 100+</span></td></tr>
+        <tr><td><b>Branded Community (Discord/Forum)</b></td><td class="bp-name">✗ None</td><td><span class="cross">✗</span></td><td><span class="check">✓ Forum</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+        <tr><td><b>Programmatic SEO (Scale)</b></td><td class="bp-name">✓ 60+ pages</td><td><span class="partial">~</span></td><td><span class="check">✓</span></td><td><span class="partial">~</span></td><td><span class="partial">~</span></td><td><span class="check">✓ 25+ alt pages</span></td><td><span class="partial">~</span></td><td><span class="partial">~</span></td></tr>
+        <tr><td><b>AI/GEO Optimization</b></td><td class="bp-name">✗ Absent</td><td><span class="cross">✗</span></td><td><span class="partial">~</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:12px; font-size:12px; color:var(--muted);">✓ = Present &amp; strong &nbsp;|&nbsp; ~ = Partial / weak &nbsp;|&nbsp; ✗ = Absent</p>
+</section>
+
+<!-- ═══════════════ LEAD FUNNEL ═══════════════ -->
+<section class="section" id="funnel">
+  <div class="section-header">
+    <div class="section-label">Conversion Architecture</div>
+    <h2 class="section-title">Organic Lead Generation Funnel — <span>From Traffic to Signup</span></h2>
+    <p class="section-sub">Map every organic channel to its place in the buyer journey. Traffic without funnel architecture is wasted.</p>
+  </div>
+
+  <div class="funnel">
+    <div class="funnel-step">
+      <div class="funnel-step-icon">🌍</div>
+      <div class="funnel-step-text">
+        <strong>AWARENESS: Multilingual SEO + YouTube + Reddit + Podcast</strong>
+        <span>Targets: "what is a WhatsApp chatbot" | "how to automate customer support" | TOFU keywords in Spanish, Hindi, Portuguese</span>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step">
+      <div class="funnel-step-icon">🔍</div>
+      <div class="funnel-step-text">
+        <strong>DISCOVERY: AI Answer Engines + Marketplace Listings + Listicle Placement</strong>
+        <span>BotPenguin cited in ChatGPT/Perplexity answers | Shopify App Store discovery | "best chatbot builder" Zapier listicles</span>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step">
+      <div class="funnel-step-icon">🤔</div>
+      <div class="funnel-step-text">
+        <strong>CONSIDERATION: Comparison Pages + Free Tools + Research Reports</strong>
+        <span>"BotPenguin vs Tidio" pages | ROI calculator | WhatsApp cost calculator | "State of Chatbots 2026" report</span>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step">
+      <div class="funnel-step-icon">✅</div>
+      <div class="funnel-step-text">
+        <strong>DECISION: Reviews + Case Studies + Integration Pages + Schema</strong>
+        <span>G2/Capterra social proof | "BotPenguin + Shopify" integration landing page | AggregateRating schema in SERPs</span>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step">
+      <div class="funnel-step-icon">🚀</div>
+      <div class="funnel-step-text">
+        <strong>SIGNUP: Free Trial CTA + Chatbot Template Gallery + Onboarding</strong>
+        <span>Template gallery drives long-tail traffic AND acts as conversion page | Free tier hook in Shopify/WordPress listings</span>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step">
+      <div class="funnel-step-icon">📣</div>
+      <div class="funnel-step-text">
+        <strong>ADVOCACY: User-Generated Content + Community + Partner Referrals</strong>
+        <span>Discord community shares templates | Users post YouTube tutorials | Partners publish "BotPenguin setup" blog posts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRIORITY MATRIX ═══════════════ -->
+<section class="section" id="priority">
+  <div class="section-header">
+    <div class="section-label">Execution Roadmap</div>
+    <h2 class="section-title">Full Priority Matrix — <span>All 35 Strategies Ranked</span></h2>
+    <p class="section-sub">Impact vs. effort vs. timeline. Execute in rank order for maximum ROI.</p>
+  </div>
+
+  <div style="overflow-x:auto; border-radius:12px; border:1px solid var(--border);">
+    <table class="priority-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Strategy</th>
+          <th>Tier</th>
+          <th>Impact</th>
+          <th>Effort</th>
+          <th>Timeline</th>
+          <th>Why Execute Now</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="rank-num rank-1">1</div></td>
+          <td><b>Multilingual SEO</b> (Hindi, Spanish, Portuguese)</td>
+          <td><span class="tag effort-low" style="background:#00d4ff18;color:var(--accent);border-color:#00d4ff44;">Standard</span></td>
+          <td><span class="stars">★★★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">3–6 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Hindi = zero competition. 148M Brazil WhatsApp users.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-2">2</div></td>
+          <td><b>GEO — AI Answer Engine Optimization</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">3–6 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">GEO visitors convert 4.4× better in B2B. First-mover window closing.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-3">3</div></td>
+          <td><b>Reddit + Forum SEO</b> (Zero presence currently)</td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★★★</span></td>
+          <td><span class="tag effort-low">Low–Med</span></td>
+          <td><span class="tag time">1–3 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Ranks in 24–48 hrs. LLMs pull from Reddit for SaaS recs.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">4</div></td>
+          <td><b>Reputation SEO</b> (Sitejabber 3.3★ emergency)</td>
+          <td><span class="tag effort-low" style="background:#00d4ff18;color:var(--accent);border-color:#00d4ff44;">Standard</span></td>
+          <td><span class="stars">★★★★<span class="stars-med">★</span></span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">1–3 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Actively killing conversions. Must fix before scaling traffic.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">5</div></td>
+          <td><b>Third-Party Listicle Placement</b></td>
+          <td><span class="tag effort-low" style="background:#00d4ff18;color:var(--accent);border-color:#00d4ff44;">Standard</span></td>
+          <td><span class="stars">★★★★<span class="stars-med">★</span></span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">1–2 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Missing from every "best chatbot" article AI models use.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">6</div></td>
+          <td><b>Bing SEO Optimization</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★★<span class="stars-med">★</span></span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">2–4 wks</span></td>
+          <td style="color:var(--muted);font-size:12px;">ChatGPT uses Bing. Not ranking in Bing = invisible in ChatGPT.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">7</div></td>
+          <td><b>Advanced Schema Markup Suite</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">1–2 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Immediate SERP upgrades + AI parsing. Quick technical win.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">8</div></td>
+          <td><b>Free Tool Suite</b> (7 calculators)</td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">2–4 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">No competitor has tools. Proven backlink + lead gen model.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">9</div></td>
+          <td><b>Shopify + Marketplace Listings</b></td>
+          <td><span class="tag effort-low" style="background:#00d4ff18;color:var(--accent);border-color:#00d4ff44;">Standard</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">2–4 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Tidio has 30K+ installs. Missing Shopify is a major gap.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">10</div></td>
+          <td><b>Content Freshness System</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">Ongoing</span></td>
+          <td style="color:var(--muted);font-size:12px;">LLM citations decay monthly. March 2026 update rewards fresh content.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">11</div></td>
+          <td><b>Topical Authority Clusters</b></td>
+          <td><span class="tag effort-low" style="background:#00d4ff18;color:var(--accent);border-color:#00d4ff44;">Standard</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">2–4 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Google March 2026: topical depth over broad shallow coverage.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">12</div></td>
+          <td><b>YouTube Tutorial SEO</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-high">High</span></td>
+          <td><span class="tag time">3–6 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Dual-platform ranking + video carousels on chatbot queries.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">13</div></td>
+          <td><b>Original Research + Data PR</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-high">Med-High</span></td>
+          <td><span class="tag time">3–6 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Tidio's stats page earns hundreds of links constantly. Zero BotPenguin data assets.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">14</div></td>
+          <td><b>Wikidata + Entity SEO</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★<span class="stars-med">★</span></span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">2–4 wks</span></td>
+          <td style="color:var(--muted);font-size:12px;">Wikidata takes 1–2 hours. Establishes Knowledge Panel eligibility.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">15</div></td>
+          <td><b>llms.txt + AI Crawler Config</b></td>
+          <td><span class="tag effort-high" style="background:#7c3aed18;color:#a78bfa;border-color:#7c3aed44;">Futuristic</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">1 week</span></td>
+          <td style="color:var(--muted);font-size:12px;">99% of SaaS hasn't done this. 1-hour task with compounding GEO benefit.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">16</div></td>
+          <td><b>Programmatic SEO Expansion</b></td>
+          <td><span class="tag effort-low" style="background:#00d4ff18;color:var(--accent);border-color:#00d4ff44;">Standard</span></td>
+          <td><span class="stars">★★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">2–4 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Foundation exists. Expand to 80+ integrations + 30+ industries.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">17</div></td>
+          <td><b>Branded Community (Discord)</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★<span class="stars-med">★</span></span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">3–6 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Tally: ChatGPT → #1 referral at 125K visits/mo from community UGC.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">18</div></td>
+          <td><b>Product Hunt Relaunch</b></td>
+          <td><span class="tag effort-low" style="background:#00d4ff18;color:var(--accent);border-color:#00d4ff44;">Standard</span></td>
+          <td><span class="stars">★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">4–6 wks</span></td>
+          <td style="color:var(--muted);font-size:12px;">2 reviews and 4 followers is abandoned. Plan a major feature relaunch.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">19</div></td>
+          <td><b>Substack Publication</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★</span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">2–4 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Ranks for 18%+ of brand searches. Indexed by Google fully.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">20</div></td>
+          <td><b>Google Discover Optimization</b></td>
+          <td><span class="tag effort-high" style="background:#7c3aed18;color:#a78bfa;border-color:#7c3aed44;">Futuristic</span></td>
+          <td><span class="stars">★★★</span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">1–2 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Feb 2026 Discover update rewards expert, locally-relevant, original content.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">21</div></td>
+          <td><b>Short-Form Video SEO (Shorts/Reels)</b></td>
+          <td><span class="tag effort-high" style="background:#7c3aed18;color:#a78bfa;border-color:#7c3aed44;">Futuristic</span></td>
+          <td><span class="stars">★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">2–4 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Google indexes TikTok/Reels. Video carousels now appearing for chatbot queries.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">22</div></td>
+          <td><b>Podcast Guesting (Backlinks)</b></td>
+          <td><span class="tag effort-high" style="background:#7c3aed18;color:#a78bfa;border-color:#7c3aed44;">Futuristic</span></td>
+          <td><span class="stars">★★★</span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">1–3 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">12 guest spots → 18 DA 70+ links via show notes. Founder credibility builds entity.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">23</div></td>
+          <td><b>AI Citation Tracking System</b></td>
+          <td><span class="tag effort-high" style="background:#7c3aed18;color:#a78bfa;border-color:#7c3aed44;">Futuristic</span></td>
+          <td><span class="stars">★★★</span></td>
+          <td><span class="tag effort-low">Low</span></td>
+          <td><span class="tag time">Ongoing</span></td>
+          <td style="color:var(--muted);font-size:12px;">Can't optimize what you can't measure. Track share of voice across AI engines monthly.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">24</div></td>
+          <td><b>Partner Ecosystem SEO</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★</span></td>
+          <td><span class="tag effort-high">Med-High</span></td>
+          <td><span class="tag time">3–6 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Partner sites become brand mention + backlink sources at zero content cost.</td>
+        </tr>
+        <tr>
+          <td><div class="rank-num rank-n">25</div></td>
+          <td><b>Branded Podcast Launch</b></td>
+          <td><span class="tag effort-med" style="background:#ff6b3518;color:var(--accent2);border-color:#ff6b3544;">Advanced</span></td>
+          <td><span class="stars">★★★</span></td>
+          <td><span class="tag effort-med">Medium</span></td>
+          <td><span class="tag time">3–6 mo</span></td>
+          <td style="color:var(--muted);font-size:12px;">Zero competitors have podcasts. Drift proved the model at 500K downloads Y1.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════ QUICK WINS ═══════════════ -->
+<section class="section" id="quickwins">
+  <div class="section-header">
+    <div class="section-label">Start This Week</div>
+    <h2 class="section-title">Quick Wins — <span>Execute in 30 Days</span></h2>
+    <p class="section-sub">High-impact actions that take hours or days, not months. Do these immediately in parallel with longer-term work.</p>
+  </div>
+
+  <div class="quick-wins">
+    <div class="qw-card">
+      <div class="qw-icon g">🔧</div>
+      <div>
+        <h5>Create llms.txt file (1 hour)</h5>
+        <p>Place at botpenguin.com/llms.txt. List your key pages, product description, and contact info in AI-readable format. Immediate GEO signal.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon b">🤖</div>
+      <div>
+        <h5>Unblock AI Crawlers in robots.txt (30 min)</h5>
+        <p>Allow GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, anthropic-ai. Ensures AI systems can index and cite BotPenguin.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon y">📊</div>
+      <div>
+        <h5>Create Wikidata Entry (2 hours)</h5>
+        <p>Go to wikidata.org → Create Item. Add company name, founding date, HQ, links to Crunchbase/LinkedIn. Establishes entity for Knowledge Panel.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon r">⭐</div>
+      <div>
+        <h5>Launch G2 Review Campaign (1 week)</h5>
+        <p>Email top 50 active users asking for G2 reviews. Offer a small incentive. Going from 6 → 50 reviews dramatically changes brand perception and AI signals.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon g">🔍</div>
+      <div>
+        <h5>Set Up Bing Webmaster Tools (1 hour)</h5>
+        <p>Submit sitemap. Verify all pages indexed. Bing data feeds directly into ChatGPT's web access. Most critical zero-cost technical fix available.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon b">📝</div>
+      <div>
+        <h5>Add Answer-First Paragraphs to Top 20 Pages (3 days)</h5>
+        <p>Each page's first paragraph: a direct 40–60 word answer to the page's primary query. This alone increases AI Overview citation probability by ~40%.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon y">💬</div>
+      <div>
+        <h5>Create Reddit Account + Begin Karma Building (Today)</h5>
+        <p>Join r/chatbots, r/SaaS, r/ecommerce. Begin answering questions helpfully (no promotion for 4–6 weeks). Fastest path to community SEO presence.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon r">📋</div>
+      <div>
+        <h5>Respond to All Negative Reviews (2 days)</h5>
+        <p>Professional, empathetic responses to every Sitejabber + Trustpilot negative review. Shows active management to both AI signals and human prospects.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon g">🏷️</div>
+      <div>
+        <h5>Add FAQPage Schema to Top 10 Blogs (1 day)</h5>
+        <p>Add FAQPage schema JSON-LD to your top 10 traffic-driving blog posts. Each eligible page gets FAQ rich snippets in Google + gets parsed by AI Overviews.</p>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-icon b">📧</div>
+      <div>
+        <h5>Pitch Top 10 "Best Chatbot" Listicle Authors (3 days)</h5>
+        <p>Find authors of top 10 ranking "best chatbot builder" articles. Email with free account + comparison data. Getting into 3 listicles can trigger AI citation cascades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ OPPORTUNITY MAP ═══════════════ -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-label">Visual Overview</div>
+    <h2 class="section-title">Opportunity Landscape — <span>BotPenguin's Full SEO Universe</span></h2>
+  </div>
+  <div class="opp-map">
+    <div class="opp-cell fire"><div class="opp-icon">🔥</div><div class="opp-name">Hindi SEO<br>Zero Competition</div></div>
+    <div class="opp-cell fire"><div class="opp-icon">🌎</div><div class="opp-name">LATAM Spanish/PT<br>WhatsApp Market</div></div>
+    <div class="opp-cell fire"><div class="opp-icon">🤖</div><div class="opp-name">GEO / AI<br>Answer Engines</div></div>
+    <div class="opp-cell fire"><div class="opp-icon">💬</div><div class="opp-name">Reddit<br>Zero Presence</div></div>
+    <div class="opp-cell fire"><div class="opp-icon">⭐</div><div class="opp-name">Review Sites<br>Emergency Fix</div></div>
+    <div class="opp-cell high"><div class="opp-icon">🛠️</div><div class="opp-name">Free Tool<br>Suite</div></div>
+    <div class="opp-cell high"><div class="opp-icon">🏪</div><div class="opp-name">Shopify<br>App Store</div></div>
+    <div class="opp-cell high"><div class="opp-icon">🎬</div><div class="opp-name">YouTube<br>Tutorials</div></div>
+    <div class="opp-cell high"><div class="opp-icon">📊</div><div class="opp-name">Original<br>Research</div></div>
+    <div class="opp-cell high"><div class="opp-icon">🧩</div><div class="opp-name">Schema<br>Markup Suite</div></div>
+    <div class="opp-cell med"><div class="opp-icon">🏆</div><div class="opp-name">Entity SEO<br>Wikidata</div></div>
+    <div class="opp-cell med"><div class="opp-icon">📋</div><div class="opp-name">llms.txt<br>AI Config</div></div>
+    <div class="opp-cell med"><div class="opp-icon">🎙️</div><div class="opp-name">Podcast<br>+ Guesting</div></div>
+    <div class="opp-cell med"><div class="opp-icon">👥</div><div class="opp-name">Discord<br>Community</div></div>
+    <div class="opp-cell med"><div class="opp-icon">📰</div><div class="opp-name">Substack<br>Publication</div></div>
+    <div class="opp-cell low"><div class="opp-icon">🤝</div><div class="opp-name">Partner<br>Ecosystem</div></div>
+    <div class="opp-cell low"><div class="opp-icon">📱</div><div class="opp-name">Short-Form<br>Video</div></div>
+    <div class="opp-cell low"><div class="opp-icon">🌐</div><div class="opp-name">Google<br>Discover</div></div>
+    <div class="opp-cell low"><div class="opp-icon">🔄</div><div class="opp-name">Content<br>Repurposing</div></div>
+    <div class="opp-cell low"><div class="opp-icon">🚀</div><div class="opp-name">Product Hunt<br>Relaunch</div></div>
+  </div>
+  <div style="display:flex;gap:16px;margin-top:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);">
+    <span>🔥 Fire Priority = Immediate High-ROI</span>
+    <span style="color:#f59e0b88;">● High = Execute Month 1–2</span>
+    <span style="color:#10b98188;">● Medium = Execute Month 2–4</span>
+    <span style="color:#3b82f688;">● Low = Execute Month 3–6</span>
+  </div>
+</section>
+
+<!-- ═══════════════ TIMELINE ═══════════════ -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-label">90-Day Execution Roadmap</div>
+    <h2 class="section-title">Phase Plan — <span>What to Build, When</span></h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;">
+    <div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);margin-bottom:16px;font-size:15px;">Month 1 — Fix the Foundations</div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot t1c"></div><div class="timeline-label">Week 1</div><div class="timeline-title">Technical Fixes</div><div class="timeline-desc">llms.txt, robots.txt AI crawlers, Bing Webmaster Tools, Wikidata entry, FAQPage schema on top 10 pages.</div></div>
+        <div class="timeline-item"><div class="timeline-dot t1c"></div><div class="timeline-label">Week 2</div><div class="timeline-title">Reputation Repair</div><div class="timeline-desc">Respond to all negative reviews. Launch G2 review campaign. Upgrade G2 plan. Pitch top 10 listicle authors.</div></div>
+        <div class="timeline-item"><div class="timeline-dot t1c"></div><div class="timeline-label">Week 3</div><div class="timeline-title">Reddit + Quora Launch</div><div class="timeline-desc">Create accounts. Begin karma building in r/SaaS, r/chatbots, r/ecommerce. Answer top 20 Quora chatbot questions.</div></div>
+        <div class="timeline-item"><div class="timeline-dot t1c"></div><div class="timeline-label">Week 4</div><div class="timeline-title">GEO Content Audit</div><div class="timeline-desc">Add answer-first paragraphs to top 50 pages. Add statistics and expert citations. Deploy full schema suite.</div></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;color:var(--accent2);margin-bottom:16px;font-size:15px;">Month 2 — Build the Channels</div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot t2c"></div><div class="timeline-label">Weeks 5–6</div><div class="timeline-title">Multilingual Launch (Spanish)</div><div class="timeline-desc">Launch /es/ subdirectory with 10 key pages. Focus on "chatbot para WhatsApp" and "bot para empresas" keywords.</div></div>
+        <div class="timeline-item"><div class="timeline-dot t2c"></div><div class="timeline-label">Week 6</div><div class="timeline-title">Shopify App Submission</div><div class="timeline-desc">Submit native Shopify App listing. Prepare app store screenshots, copy, and review solicitation emails.</div></div>
+        <div class="timeline-item"><div class="timeline-dot t2c"></div><div class="timeline-label">Weeks 7–8</div><div class="timeline-title">Free Tool #1 Launch</div><div class="timeline-desc">Launch WhatsApp API cost calculator. Add FAQ schema, CTA, embed on relevant blog posts. Start link outreach.</div></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;color:var(--accent3);margin-bottom:16px;font-size:15px;">Month 3 — Scale the Flywheel</div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot t3c"></div><div class="timeline-label">Weeks 9–10</div><div class="timeline-title">Portuguese + Hindi Launch</div><div class="timeline-desc">Launch /pt/ and /hi/ subdirectories. Focus Hindi on "WhatsApp chatbot kaise banaye" and India business use-cases.</div></div>
+        <div class="timeline-item"><div class="timeline-dot t3c"></div><div class="timeline-label">Week 10</div><div class="timeline-title">YouTube Channel Launch</div><div class="timeline-desc">Publish first 4 tutorial videos. WhatsApp chatbot setup, integration guides, vs comparisons. Weekly cadence.</div></div>
+        <div class="timeline-item"><div class="timeline-dot t3c"></div><div class="timeline-label">Weeks 11–12</div><div class="timeline-title">Research Report + Podcast Pitch</div><div class="timeline-desc">Launch "State of AI Chatbots 2026" report. Pitch founders to SaaStr + SaaS Revolution Show for DA 70+ link pipeline.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<div class="footer">
+  <strong>BotPenguin Organic SEO Playbook 2026</strong> · Based on analysis of 8 competitors · Aligned with Google March 2026 Core Update + February Discover Update · Incorporates GEO / AI Answer Engine Optimization research · 35+ strategies across 3 tiers
+  <br><br>
+  <span>Data sources: Semrush, Ahrefs, Backlinko, McKinsey AI Search Report, Google Search Central, Search Engine Land, Coalition Technologies, Evergreen Media, Foundation Inc., Gartner</span>
+</div>
+
+<script>
+  // Nav scroll
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  // Active nav on scroll
+  const sections = ['updates','standard','advanced','futuristic','gaps','funnel','priority','quickwins'];
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = sections.indexOf(e.target.id);
+        if (idx > -1) {
+          document.querySelectorAll('.nav-tab').forEach((t, i) => {
+            t.classList.toggle('active', i === idx);
+          });
+        }
+      }
+    });
+  }, { threshold: 0.2 });
+  sections.forEach(id => { const el = document.getElementById(id); if (el) observer.observe(el); });
+
+  // Fade in animation
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.card, .future-card, .qw-card, .funnel-step').forEach(el => {
+    el.classList.add('fade-in');
+    fadeObserver.observe(el);
+  });
+</script>
+</body>
+</html>
